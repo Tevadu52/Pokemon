@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499df91f6d9d65a488b84fff14bbd087, type: 3}
+  m_Name: Insecte
+  m_EditorClassIdentifier: 
+  type: {fileID: 11400000}
+  strong:
+  - {fileID: 11400000, guid: eae13b5dd7fdae44c8a149174eb42e61, type: 2}
+  - {fileID: 11400000, guid: e5557e3dab3739a4aa4678980067183b, type: 2}
+  - {fileID: 11400000, guid: d802eb4f876774548a3b8cb49aa29707, type: 2}
+  weak:
+  - {fileID: 11400000, guid: c811067e3a8216c44ba22b59e816c786, type: 2}
+  - {fileID: 11400000, guid: 8370f7a48a4557642b677f0a92945b0a, type: 2}
+  - {fileID: 11400000, guid: f09729ab8f02c4a418f73bc3a2f40a17, type: 2}
+  - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+  - {fileID: 11400000, guid: 38cd3c858a6336844b7ea599be797d22, type: 2}
+  - {fileID: 11400000, guid: e3e23a7e2cca0ce44a25e0c19adbc2f0, type: 2}

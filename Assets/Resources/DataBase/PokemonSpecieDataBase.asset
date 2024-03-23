@@ -1,0 +1,188 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a4a1bf39aee78d4e8e5899a3d02a9d9, type: 3}
+  m_Name: PokemonSpecieDataBase
+  m_EditorClassIdentifier: 
+  dataBase:
+  - nameSpecie: Tortank
+    id: 9
+    elements:
+    - {fileID: 11400000, guid: c97a561bc7f80e340ac68fdb48e9b25a, type: 2}
+    sprite: {fileID: 21300000, guid: de8daf4f14fb67e40ab43f217c6f09b4, type: 3}
+    stat:
+      baseHp: 79
+      baseAttack: 83
+      baseDefense: 100
+      baseAttackSpe: 85
+      baseDefenseSpe: 105
+      baseSpeed: 78
+      baseXP: 210
+    captureTaux: 45
+    info:
+      poids: 85,5 kg
+      taille: 1,6 m
+      description: " Il augmente d\xE9lib\xE9r\xE9ment sa masse corporelle pour contrer
+        le recul de ses puissants jets d\u2019eau. "
+  - nameSpecie: Dracaufeu
+    id: 6
+    elements:
+    - {fileID: 11400000, guid: 569901c1a44a9fd4492d62653dbde6a3, type: 2}
+    - {fileID: 11400000, guid: e3e23a7e2cca0ce44a25e0c19adbc2f0, type: 2}
+    sprite: {fileID: 21300000, guid: 15d342322ca23a1469e45297cb69bbf3, type: 3}
+    stat:
+      baseHp: 78
+      baseAttack: 104
+      baseDefense: 78
+      baseAttackSpe: 159
+      baseDefenseSpe: 115
+      baseSpeed: 100
+      baseXP: 240
+    captureTaux: 45
+    info:
+      poids: 90,5 kg
+      taille: 1,7 m
+      description: " Quand Dracaufeu s\u2019\xE9nerve r\xE9ellement, la flamme au
+        bout de sa queue devient bleue. "
+  - nameSpecie: Pikachu
+    id: 25
+    elements:
+    - {fileID: 11400000, guid: c1685d950192cfa46b6080982152f46c, type: 2}
+    sprite: {fileID: 21300000, guid: 54a325ca7264eb94f99fff3233205aeb, type: 3}
+    stat:
+      baseHp: 35
+      baseAttack: 55
+      baseDefense: 40
+      baseAttackSpe: 50
+      baseDefenseSpe: 50
+      baseSpeed: 90
+      baseXP: 112
+    captureTaux: 190
+    info:
+      poids: 6,0 kg
+      taille: 0,4 m
+      description: " Quand il s\u2019\xE9nerve, il lib\xE8re instantan\xE9ment l\u2019\xE9nergie
+        emmagasin\xE9e dans les poches de ses joues. "
+  - nameSpecie: Simiabraz
+    id: 392
+    elements:
+    - {fileID: 11400000, guid: 569901c1a44a9fd4492d62653dbde6a3, type: 2}
+    - {fileID: 11400000, guid: 8370f7a48a4557642b677f0a92945b0a, type: 2}
+    sprite: {fileID: 21300000, guid: ecd22175eb62f614f9a9b452f3e582cb, type: 3}
+    stat:
+      baseHp: 76
+      baseAttack: 104
+      baseDefense: 71
+      baseAttackSpe: 104
+      baseDefenseSpe: 71
+      baseSpeed: 108
+      baseXP: 240
+    captureTaux: 45
+    info:
+      poids: 
+      taille: 
+      description: 
+  - nameSpecie: Miaouss
+    id: 52
+    elements:
+    - {fileID: 11400000, guid: 5fec31789c93ee142a5f0976818c5736, type: 2}
+    sprite: {fileID: 21300000, guid: bfed7ecefe63dad4f976819e21a918aa, type: 3}
+    stat:
+      baseHp: 40
+      baseAttack: 45
+      baseDefense: 35
+      baseAttackSpe: 40
+      baseDefenseSpe: 40
+      baseSpeed: 90
+      baseXP: 58
+    captureTaux: 255
+    info:
+      poids: 4,2 kg
+      taille: 0,4 m
+      description: " Il passe ses journ\xE9es \xE0 dormir. La nuit venue, il patrouille
+        sur son territoire, les yeux brillants. "
+  - nameSpecie: Lucario
+    id: 448
+    elements:
+    - {fileID: 11400000, guid: 8370f7a48a4557642b677f0a92945b0a, type: 2}
+    - {fileID: 11400000, guid: c811067e3a8216c44ba22b59e816c786, type: 2}
+    sprite: {fileID: 21300000, guid: 3e2ee64a401cd874c833c93f4a5b35b4, type: 3}
+    stat:
+      baseHp: 70
+      baseAttack: 110
+      baseDefense: 70
+      baseAttackSpe: 115
+      baseDefenseSpe: 70
+      baseSpeed: 90
+      baseXP: 184
+    captureTaux: 45
+    info:
+      poids: 54,0 kg
+      taille: 1,2 m
+      description: " On dit qu\u2019il peut rep\xE9rer ses ennemis, m\xEAme lorsqu\u2019ils
+        sont invisibles, car il ressent leur aura. "
+  - nameSpecie: Meganium
+    id: 154
+    elements:
+    - {fileID: 11400000, guid: eae13b5dd7fdae44c8a149174eb42e61, type: 2}
+    sprite: {fileID: 21300000, guid: afde91f5542e416489b86e7fbf9bff2b, type: 3}
+    stat:
+      baseHp: 80
+      baseAttack: 82
+      baseDefense: 100
+      baseAttackSpe: 83
+      baseDefenseSpe: 100
+      baseSpeed: 80
+      baseXP: 236
+    captureTaux: 45
+    info:
+      poids: 100,5 kg
+      taille: 1,8 m
+      description: " Toute personne se tenant pr\xE8s de lui se sent revigor\xE9e,
+        comme si elle respirait l\u2019air frais de la for\xEAt. "
+  - nameSpecie: Ronflex
+    id: 143
+    elements:
+    - {fileID: 11400000, guid: 5fec31789c93ee142a5f0976818c5736, type: 2}
+    sprite: {fileID: 21300000, guid: 5d8575ea866b76140b8c5e192ce8aa36, type: 3}
+    stat:
+      baseHp: 160
+      baseAttack: 110
+      baseDefense: 65
+      baseAttackSpe: 65
+      baseDefenseSpe: 110
+      baseSpeed: 30
+      baseXP: 189
+    captureTaux: 25
+    info:
+      poids: 460,0 kg
+      taille: 2,1 m
+      description: " Quand il ne dort pas, ce glouton passe son temps \xE0 manger.
+        Il peut ingurgiter jusqu\u2019\xE0 400 kg de nourriture en une seule journ\xE9e. "
+  - nameSpecie: Mewtwo
+    id: 150
+    elements:
+    - {fileID: 11400000, guid: e5557e3dab3739a4aa4678980067183b, type: 2}
+    sprite: {fileID: 21300000, guid: 247057e0f00a5094a959b24020b4daf6, type: 3}
+    stat:
+      baseHp: 106
+      baseAttack: 110
+      baseDefense: 90
+      baseAttackSpe: 154
+      baseDefenseSpe: 90
+      baseSpeed: 130
+      baseXP: 306
+    captureTaux: 3
+    info:
+      poids: 122,0 kg
+      taille: 2,0 m
+      description: " Son ADN est presque le m\xEAme que celui de Mew, mais sa taille
+        et son caract\xE8re sont tr\xE8s diff\xE9rents. "
