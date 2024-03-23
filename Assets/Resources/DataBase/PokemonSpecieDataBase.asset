@@ -87,9 +87,10 @@ MonoBehaviour:
       baseXP: 240
     captureTaux: 45
     info:
-      poids: 
-      taille: 
-      description: 
+      poids: 55,0 kg
+      taille: 1,2 m
+      description: " Il se joue de ses adversaires gr\xE2ce \xE0 sa vitesse. Son
+        style de combat sp\xE9cial sollicite ses quatre membres. "
   - nameSpecie: Miaouss
     id: 52
     elements:
