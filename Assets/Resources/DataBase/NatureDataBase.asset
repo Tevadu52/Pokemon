@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 813cb26d616262947aaa3d185a2a71e5, type: 3}
   m_Name: NatureDataBase
   m_EditorClassIdentifier: 
+  label: Pokemon Nature
   dataBase:
   - name: "Assur\xE9"
     attack: 0.9
@@ -19,172 +20,147 @@ MonoBehaviour:
     speed: 1
     attackSpe: 1
     defenseSpe: 1
-    health: 1
   - name: Bizarre
     attack: 1
     defense: 1
     speed: 1
     attackSpe: 1
     defenseSpe: 1
-    health: 1
   - name: Brave
     attack: 1.1
     defense: 1
     speed: 0.9
     attackSpe: 1
     defenseSpe: 1
-    health: 1
   - name: Calme
     attack: 0.9
     defense: 1
     speed: 1
     attackSpe: 1
     defenseSpe: 1.1
-    health: 1
   - name: Discret
     attack: 1
     defense: 1
     speed: 0.9
     attackSpe: 1.1
     defenseSpe: 1
-    health: 1
   - name: Docile
     attack: 1
     defense: 1
     speed: 1
     attackSpe: 1
     defenseSpe: 1
-    health: 1
   - name: Doux
     attack: 1
     defense: 0.9
     speed: 1
     attackSpe: 1.1
     defenseSpe: 1
-    health: 1
   - name: Foufou
     attack: 1
     defense: 1
     speed: 1
     attackSpe: 1.1
     defenseSpe: 0.9
-    health: 1
   - name: Gentil
     attack: 1
     defense: 0.9
     speed: 1
     attackSpe: 1
     defenseSpe: 1.1
-    health: 1
   - name: Hardi
     attack: 1
     defense: 1
     speed: 1
     attackSpe: 1
     defenseSpe: 1
-    health: 1
   - name: Jovial
     attack: 1
     defense: 1
     speed: 1.1
     attackSpe: 0.9
     defenseSpe: 1
-    health: 1
   - name: Lache
     attack: 1
     defense: 1.1
     speed: 1
     attackSpe: 1
     defenseSpe: 0.9
-    health: 1
   - name: Malin
     attack: 1
     defense: 1.1
     speed: 1
     attackSpe: 0.9
     defenseSpe: 1
-    health: 1
   - name: Malpoli
     attack: 1
     defense: 1
     speed: 0.9
     attackSpe: 1
     defenseSpe: 1.1
-    health: 1
   - name: Mauvais
     attack: 1.1
     defense: 1
     speed: 1
     attackSpe: 1
     defenseSpe: 0.9
-    health: 1
   - name: Modeste
     attack: 0.9
     defense: 1
     speed: 1
     attackSpe: 1.1
     defenseSpe: 1
-    health: 1
   - name: Naif
     attack: 1
     defense: 1
     speed: 1.1
     attackSpe: 1
     defenseSpe: 0.9
-    health: 1
   - name: "Pr\xE9ss\xE9"
     attack: 1
     defense: 0.9
     speed: 1.1
     attackSpe: 1
     defenseSpe: 1
-    health: 1
   - name: Prudent
     attack: 1
     defense: 1
     speed: 1
     attackSpe: 0.9
     defenseSpe: 1.1
-    health: 1
   - name: Pudique
     attack: 1
     defense: 1
     speed: 1
     attackSpe: 1
     defenseSpe: 1
-    health: 1
   - name: Relax
     attack: 1
     defense: 1.1
     speed: 0.9
     attackSpe: 1
     defenseSpe: 1
-    health: 1
   - name: Rigide
     attack: 1.1
     defense: 1
     speed: 1
     attackSpe: 1
     defenseSpe: 0.9
-    health: 1
   - name: "S\xE9rieux"
     attack: 1
     defense: 1
     speed: 1
     attackSpe: 1
     defenseSpe: 1
-    health: 1
   - name: Solo
     attack: 1.1
     defense: 0.9
     speed: 1
     attackSpe: 1
     defenseSpe: 1
-    health: 1
   - name: Timide
     attack: 0.9
     defense: 1
     speed: 1.1
     attackSpe: 1
     defenseSpe: 1
-    health: 1

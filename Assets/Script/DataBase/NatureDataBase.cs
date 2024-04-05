@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NatureDataBase", menuName = "My Game/NatureDataBase")]
-public class NatureDataBase : ScriptableObject
+public class NatureDataBase : BaseData
 {
     [SerializeField]
     private List<NatureData> dataBase;
 
-    public NatureData GetPokemonSpecieData(int i)
+    public NatureData GetPokemonNatureData(int i)
     {
         return dataBase[i];
     }

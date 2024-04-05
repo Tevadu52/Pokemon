@@ -57,14 +57,14 @@ public class UIPokeBattle : MonoBehaviour
         if (adverse) { pokemonLifeAdverseText.text = currentLife + " / " + totalLife + " PV"; }
         else { pokemonLifeText.text = currentLife + " / " + totalLife + " PV"; }
     }
-    private void ChangeTypeText(List<Element> elements, bool adverse = false)
+    private void ChangeTypeText(List<ElementData> elements, bool adverse = false)
     {
         if (adverse) 
         { 
             pokemonTypeAdverseText.text = "";
             for (int i = 0; i < elements.Count; i++)
             {
-                pokemonTypeAdverseText.text += elements[i];
+                pokemonTypeAdverseText.text += elements[i].Type;
                 if (i != elements.Count - 1)
                 {
                     pokemonTypeAdverseText.text +=  " / ";
@@ -76,7 +76,7 @@ public class UIPokeBattle : MonoBehaviour
             pokemonTypeText.text = "";
             for (int i = 0; i < elements.Count; i++)
             {
-                pokemonTypeText.text += elements[i];
+                pokemonTypeText.text += elements[i].Type;
                 if (i != elements.Count - 1)
                 {
                     pokemonTypeText.text += " / ";
@@ -105,18 +105,18 @@ public class UIPokeBattle : MonoBehaviour
     }
     public void ChangeUIPokemonHimself(Pokemon pokemon1)
     {
-        ChangePokemonSprite(pokemon1.getSprite());
-        ChangeNameText(pokemon1.getName());
-        ChangeLevelText(pokemon1.getLevel());
-        ChangeLifeText(pokemon1.getCurrentHp(), pokemon1.getHp());
-        ChangeTypeText(pokemon1.getElements());
+        ChangePokemonSprite(pokemon1.BackSprite);
+        ChangeNameText(pokemon1.Name);
+        ChangeLevelText(pokemon1.Level);
+        ChangeLifeText(pokemon1.CurrentHp, pokemon1.Hp);
+        ChangeTypeText(pokemon1.Elements);
     }
     public void ChangeUIPokemonAdverse(Pokemon pokemon2)
     {
-        ChangePokemonSprite(pokemon2.getSprite(), true);
-        ChangeNameText(pokemon2.getName(), true);
-        ChangeLevelText(pokemon2.getLevel(), true);
-        ChangeLifeText(pokemon2.getCurrentHp(), pokemon2.getHp(), true);
-        ChangeTypeText(pokemon2.getElements(), true);
+        ChangePokemonSprite(pokemon2.FrontSprite, true);
+        ChangeNameText(pokemon2.Name, true);
+        ChangeLevelText(pokemon2.Level, true);
+        ChangeLifeText(pokemon2.CurrentHp, pokemon2.Hp, true);
+        ChangeTypeText(pokemon2.Elements, true);
     }
 }

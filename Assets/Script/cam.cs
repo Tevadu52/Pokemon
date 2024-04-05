@@ -8,7 +8,7 @@ public class cam : MonoBehaviour
     [SerializeField]
     private GameObject start;
     private Dresseur dresseur;
-    private Vector3 offset = new Vector3(0, 5, -5);
+    private Vector3 offset = new Vector3(0, 10, -5);
 
     private Vector3 currentposition;
     private Vector3 difference;
@@ -104,7 +104,7 @@ public class cam : MonoBehaviour
                         }
                         dresseur = hitInfo.collider.transform.parent.gameObject.GetComponent<Dresseur>();
                         dresseur.getUIDresseur().gameObject.SetActive(true);
-                        dresseur.getUIPokeMenu().ChangeUIPokemonMenu(dresseur.getTeam()[0]);
+                        dresseur.getUIPokeMenu().ChangeUIPokemonMenu();
                         // Check double click
                         if (clicked == 2 && Time.time - clickTime <= clickDelay)
                         { //J'ai double click
@@ -136,12 +136,12 @@ public class cam : MonoBehaviour
                 if (!zoom)
                 {
                     zoom = true;
-                    dresseur.getCam().transform.localPosition = new Vector3(0f, 3.75f, 0f);
+                    dresseur.getCam().transform.localPosition = new Vector3(0f, 4.15f, -0.3f);
                 }
                 else 
                 { 
                     zoom = false;
-                    dresseur.getCam().transform.localPosition = new Vector3(0f, 3.5f, -2.5f);
+                    dresseur.getCam().transform.localPosition = new Vector3(0f, 4f, -2.5f);
                 }
             }
         }

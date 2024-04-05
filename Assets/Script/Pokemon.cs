@@ -12,47 +12,97 @@ public class Pokemon
     private int hp;
     private int attack;
     private int defense;
+    private int attackSpe;
+    private int defenseSpe;
     private int speed;
-    public bool isFighting = false;
 
     public Pokemon(PokemonData PokemonData)
     { 
         this.pokemonData = PokemonData;
+        this.SetupIV();
         this.setupStats();
         this.fullHeal();
     }
 
-    public PokemonData PokemonData { get { return this.pokemonData; } }
-    public string getName() { return this.PokemonData.namePokemon; }
-    public PokemonSpecieData getSpecie() { return this.PokemonData.specie; }
-    public float getXP() { return this.PokemonData.XP; }
-    public int getLevel() { return this.PokemonData.Level; }
-    public int getHp() { return this.hp; }
-    public int getAttack() { return this.attack; }
-    public int getDefense() { return this.defense; }
-    public int getSpeed() { return this.speed; }
-    public List<Element> getElements() { return this.getSpecie().Elements; }
-    public Sprite getSprite() { return this.getSpecie().Sprite; }
-    public int getCurrentHp() { return this.PokemonData.CurrentHp; }
-
-    public void setName(string namePokemon) { this.PokemonData.namePokemon = namePokemon; }
-    public void addXP(Pokemon ennemi) 
+    public PokemonData PokemonData 
+    { 
+        get { return this.pokemonData; } 
+    }
+    public string Name 
+    { 
+        get { return this.PokemonData.namePokemon; } 
+        set { this.PokemonData.namePokemon = value; } 
+    }
+    public PokemonSpecieData Specie
     {
-        float part1 = (float)((ennemi.getSpecie().Stat.baseXP * ennemi.getLevel() * 1.5) / 5);
-        float part2 = ((2 * ennemi.getLevel() + 10) / ((ennemi.getLevel() + this.getLevel() + 10)) * (ennemi.getLevel() + this.getLevel() + 10));
-        this.PokemonData.XP += part1 * part2; 
+        get { return this.PokemonData.specie; }
+    }
+    public float XP
+    {
+        get { return this.PokemonData.XP; }
+    }
+    public int Level
+    {
+        get { return this.PokemonData.Level; }
+    }
+    public int CurrentHp
+    {
+        get { return this.PokemonData.CurrentHp; }
+    }
+    public int Hp
+    {
+        get { return this.hp; }
+    }
+    public int Attack
+    {
+        get { return this.attack; }
+    }
+    public int Defense
+    {
+        get { return this.defense; }
+    }
+    public int AttackSpe
+    {
+        get { return this.attackSpe; }
+    }
+    public int DefenseSpe
+    {
+        get { return this.defenseSpe; }
+    }
+    public int Speed
+    {
+        get { return this.speed; }
+    }
+    public List<ElementData> Elements
+    {
+        get { return this.Specie.Elements; }
+    }
+    public Sprite FrontSprite
+    {
+        get { return this.Specie.FrontSprite; }
+    }
+    public Sprite BackSprite
+    {
+        get { return this.Specie.BackSprite; }
+    }
+    public IEnumerator addXP(Pokemon ennemi, UIPokeBattle instance) 
+    {
+        float part1 = (((float)ennemi.Specie.BaseXP * ennemi.Level * 1.5f) / 5f);
+        float part2 = Mathf.Pow((2f * ennemi.Level + 10) / ((ennemi.Level + this.Level + 10)), 2.5f);
+        this.PokemonData.XP += part1 * part2 + 1;
+        instance.ChangeCombatText(this.Name + " a gagné " + Mathf.FloorToInt(part1 * part2 + 1) + " point d'expérience après ce combat.");
+        yield return new WaitForSeconds(UIPokeBattle.TextTime);
     }
     public IEnumerator LevelUp(UIPokeBattle instance, UIPokeBattle instanceEnnemy)
     {
-        instance.ChangeCombatText(this.getName() + " a gagné de l'expérience après ce combat.");
-        yield return new WaitForSeconds(UIPokeBattle.TextTime);
-        if (this.PokemonData.XP > (this.PokemonData.Level * this.PokemonData.Level * this.PokemonData.Level))
+        if (this.PokemonData.XP > Mathf.Pow(this.PokemonData.Level, 3))
         {
             this.PokemonData.Level += 1;
-            this.PokemonData.XP -= (this.PokemonData.Level * this.PokemonData.Level * this.PokemonData.Level);
+            this.PokemonData.XP -= Mathf.Pow(this.PokemonData.Level,3);
             instance.ChangeUIPokemonHimself(this);
             instanceEnnemy.ChangeUIPokemonAdverse(this);
-            instance.ChangeCombatText(this.getName() + " est monté d'un niveau !!");
+            instance.ChangeCombatText(this.Name + " est monté d'un niveau !!");
+            this.setupStats();
             yield return new WaitForSeconds(UIPokeBattle.TextTime);
         }
     }
@@ -60,56 +110,87 @@ public class Pokemon
     public void takeDamage(int damage) 
     { 
         this.PokemonData.CurrentHp -= damage;
-        if (this.getCurrentHp() <= 0)
+        if (this.CurrentHp <= 0)
         {
             this.PokemonData.CurrentHp = 0;
         }
     }
+
+    public void SetupIV()
+    {
+        pokemonData.IVs.Hp = Random.Range(0, 31);
+        pokemonData.IVs.Attack = Random.Range(0, 31);
+        pokemonData.IVs.Defense = Random.Range(0, 31);
+        pokemonData.IVs.AttackSpe = Random.Range(0, 31);
+        pokemonData.IVs.DefenseSpe = Random.Range(0, 31);
+        pokemonData.IVs.Speed = Random.Range(0, 31);
+    }
+
     public void setupStats()
     {
-        this.hp = Mathf.FloorToInt((2 * PokemonData.specie.Stat.baseHp + Random.Range(0, 31) * PokemonData.Level) / 100 + PokemonData.Level + 10);
-        this.attack = Mathf.FloorToInt((2 * PokemonData.specie.Stat.baseAttack + Random.Range(0, 31) / 100 * PokemonData.Level) + 5);
-        this.defense = Mathf.FloorToInt((2 * PokemonData.specie.Stat.baseDefense + Random.Range(0, 31) / 100 * PokemonData.Level) + 5);
-        this.speed = Mathf.FloorToInt((2 * PokemonData.specie.Stat.baseDefense + Random.Range(0, 31) / 100 * PokemonData.Level) + 5);
+        float level = PokemonData.Level;
+        float baseHP = PokemonData.specie.Stats.Hp;
+        this.hp = Mathf.FloorToInt(((2f * baseHP + pokemonData.IVs.Hp) * level) / 100f + level + 10f);
+        float baseAttack = PokemonData.specie.Stats.Attack;
+        this.attack = Mathf.FloorToInt(((((2f * baseAttack + pokemonData.IVs.Attack) / 100f) * level) + 5f) * PokemonData.Nature.attack);
+        float baseDefense = PokemonData.specie.Stats.Defense;
+        this.defense = Mathf.FloorToInt(((((2f * baseDefense + pokemonData.IVs.Defense) / 100f) * level) + 5f) * PokemonData.Nature.defense);
+        float baseAttackSpe = PokemonData.specie.Stats.AttackSpe;
+        this.attackSpe = Mathf.FloorToInt(((((2f * baseAttackSpe + pokemonData.IVs.AttackSpe) / 100f) * level) + 5f) * PokemonData.Nature.attackSpe);
+        float baseDefenseSpe = PokemonData.specie.Stats.DefenseSpe;
+        this.defenseSpe = Mathf.FloorToInt(((((2f * baseDefenseSpe + pokemonData.IVs.DefenseSpe) / 100f) * level) + 5f) * PokemonData.Nature.defenseSpe);
+        float baseSpeed = PokemonData.specie.Stats.Speed;
+        this.speed = Mathf.FloorToInt(((((2f * baseSpeed + pokemonData.IVs.Speed) / 100f) * level) + 5f) * PokemonData.Nature.speed);
     }
 
     private bool is_lucky()
     {
         return true; /// A modifié pour les battles stats acuracy et esquive
     }
-    public int howDeal(Pokemon enemy)
+    public float howDeal(Pokemon enemy)
     {
-        int result = 1;
-        foreach(Element element in this.getElements())
+        float result = 1f;
+        foreach(ElementData element in this.Elements)
         {
-            foreach (Element elementAdverse in enemy.getElements())
+            foreach (ElementData elementAdverse in enemy.Elements)
             {
-                if (element.Strong.Contains(elementAdverse.Type))
+                if (element.Strong.Contains(elementAdverse))
                 {
                     result *= 2;
                 }
-                else if (element.Weak.Contains(elementAdverse.Type))
+                else if (element.Weak.Contains(elementAdverse))
                 {
                     result /= 2;
                 }
             }
         }
-        
         return result;
     }
 
-    private int calculDamage(Pokemon enemy)
+    private float calculDamage(Pokemon enemy, bool attackSpe = false) // Change attackSpe par l'obtention de la compétence utiliser
     {
-        double damage = 0.5;
-        damage *= 10;
-        damage *= this.getAttack() / enemy.getDefense();
+        float _attack;
+        float _defense;
+        if (attackSpe)
+        {
+            _attack = this.AttackSpe;
+            _defense = enemy.DefenseSpe;
+        }
+        else
+        {
+            _attack = this.Attack;
+            _defense = enemy.Defense;
+        }
+        float damage = (enemy.Level * 0.4f + 2) * _attack * 100f;// 100 est la puissance de la compétence utiliserr
+        damage /= _defense;
+        damage /= 50f;
+        damage += 2;
         damage *= this.howDeal(enemy);
-        if (damage < 0) { damage = 0; }
-        damage++;
-        return ((int)damage);
+        if (damage < 0) { damage = 0f; }
+        return damage;
     }
 
-    public void attackPokemon(Pokemon enemy, UIPokeBattle instance, UIPokeBattle instanceEnnemy)
+    public IEnumerator attackPokemon(Pokemon enemy, UIPokeBattle instance, UIPokeBattle instanceEnnemy)
     {
         if (this.howDeal(enemy) > 1)
         {
@@ -121,43 +202,50 @@ public class Pokemon
             instance.ChangeCombatText("C'est très peu efficace!");
             instanceEnnemy.ChangeCombatText("C'est très peu efficace!");
         }
-        enemy.takeDamage(this.calculDamage(enemy));
+        yield return new WaitForSeconds(UIPokeBattle.TextTime);
+        float finalDamage = this.calculDamage(enemy);
+        if (Random.Range(0, 100) < 5) // C'est un coup critique
+        {
+            finalDamage *= 1.5f;
+            instance.ChangeCombatText("C'est un coup critique!");
+            instanceEnnemy.ChangeCombatText("C'est un coup critique!");
+        }
+        yield return new WaitForSeconds(UIPokeBattle.TextTime);
+        instance.ChangeCombatText(enemy.Name + " a reçu " + Mathf.FloorToInt(finalDamage) + " point de dégats.");
+        instanceEnnemy.ChangeCombatText(enemy.Name + " a reçu " + Mathf.FloorToInt(finalDamage) + " point de dégats.");
+        yield return new WaitForSeconds(UIPokeBattle.TextTime);
+        enemy.takeDamage(Mathf.FloorToInt(finalDamage));
     }
 
     public IEnumerator fight(Pokemon enemy, UIPokeBattle instance, UIPokeBattle instanceEnnemy)
     {
-        this.isFighting = true;
-        enemy.isFighting = true;
-        this.setupStats();
-        enemy.setupStats();
+        //Debug.Log($"Pokemon1 lv:{this.Level} stats {this.attack},{this.defense} et Pokemon2 lv:{enemy.Level} stats {enemy.attack},{enemy.defense}");
         yield return new WaitForSeconds(UIPokeBattle.TextTime);
-        instance.ChangeCombatText(this.getName() + " VS " + enemy.getName());
-        instanceEnnemy.ChangeCombatText(enemy.getName() + " VS " + this.getName());
+        instance.ChangeCombatText(this.Name + " VS " + enemy.Name);
+        instanceEnnemy.ChangeCombatText(enemy.Name + " VS " + this.Name);
         Pokemon first = this;
         Pokemon second = enemy;
-        if (this.getSpeed() < enemy.getSpeed())
+        if (this.Speed < enemy.Speed)
         {
             first = enemy;
             second = this;
         }
         int nb = 0;
         yield return new WaitForSeconds(UIPokeBattle.TextTime);
-        instance.ChangeCombatText(first.getName() + " est le premier à attaquer!");
-        instanceEnnemy.ChangeCombatText(first.getName() + " est le premier à attaquer!");
-        while (first.getCurrentHp() > 0)
+        instance.ChangeCombatText(first.Name + " est le premier à attaquer!");
+        instanceEnnemy.ChangeCombatText(first.Name + " est le premier à attaquer!");
+        instance.ChangeUIPokemon(this, enemy);
+        instanceEnnemy.ChangeUIPokemon(enemy, this);
+        yield return new WaitForSeconds(UIPokeBattle.TextTime);
+        while (first.CurrentHp > 0)
         {
-            yield return new WaitForSeconds(UIPokeBattle.TextTime);
-            instance.ChangeUIPokemon(this, enemy);
-            instanceEnnemy.ChangeUIPokemon(enemy, this);
             if (first.is_lucky())
             {
-                instance.ChangeCombatText(first.getName() + " attaque " + second.getName());
-                instanceEnnemy.ChangeCombatText(first.getName() + " attaque " + second.getName());
-                first.attackPokemon(second, instance, instanceEnnemy);
+                instance.ChangeCombatText(first.Name + " attaque " + second.Name);
+                instanceEnnemy.ChangeCombatText(first.Name + " attaque " + second.Name);
                 yield return new WaitForSeconds(UIPokeBattle.TextTime);
-                instance.ChangeCombatText(second.getName() + " a reçu " + (first.calculDamage(second)) + " point de dégats.");
-                instanceEnnemy.ChangeCombatText(second.getName() + " a reçu " + (first.calculDamage(second)) + " point de dégats.");
-                if (second.getCurrentHp() <= 0)
+                yield return first.attackPokemon(second, instance, instanceEnnemy);
+                if (second.CurrentHp <= 0)
                 {
                     instance.ChangeUIPokemon(this, enemy);
                     instanceEnnemy.ChangeUIPokemon(enemy, this);
@@ -166,48 +254,51 @@ public class Pokemon
             }
             else
             {
-                instance.ChangeCombatText(first.getName() + " râte son attaque!");
-                instanceEnnemy.ChangeCombatText(first.getName() + " râte son attaque!");
+                instance.ChangeCombatText(first.Name + " râte son attaque!");
+                instanceEnnemy.ChangeCombatText(first.Name + " râte son attaque!");
+                yield return new WaitForSeconds(UIPokeBattle.TextTime);
             }
             instance.ChangeUIPokemon(this, enemy);
             instanceEnnemy.ChangeUIPokemon(enemy, this);
-            yield return new WaitForSeconds(UIPokeBattle.TextTime);
             if (second.is_lucky())
             {
-                instance.ChangeCombatText(second.getName() + " attaque " + first.getName());
-                instanceEnnemy.ChangeCombatText(second.getName() + " attaque " + first.getName());
-                second.attackPokemon(first, instance, instanceEnnemy);
+                instance.ChangeCombatText(second.Name + " attaque " + first.Name);
+                instanceEnnemy.ChangeCombatText(second.Name + " attaque " + first.Name);
                 yield return new WaitForSeconds(UIPokeBattle.TextTime);
-                instance.ChangeCombatText(first.getName() + " a reçu " + (second.calculDamage(first)) + " point de dégats.");
-                instanceEnnemy.ChangeCombatText(first.getName() + " a reçu " + (second.calculDamage(first)) + " point de dégats.");
+                yield return second.attackPokemon(first, instance, instanceEnnemy);
             }
             else
             {
-                instance.ChangeCombatText(second.getName() + " râte son attaque!");
-                instanceEnnemy.ChangeCombatText(second.getName() + " râte son attaque!");
+                instance.ChangeCombatText(second.Name + " râte son attaque!");
+                instanceEnnemy.ChangeCombatText(second.Name + " râte son attaque!");
+                yield return new WaitForSeconds(UIPokeBattle.TextTime);
             }
             instance.ChangeUIPokemon(this, enemy);
             instanceEnnemy.ChangeUIPokemon(enemy, this);
             nb++;
             if (nb > 100) { break; }
         }
-        if (enemy.getCurrentHp() <= 0)
+        if (enemy.CurrentHp <= 0)
         {
-            this.addXP(enemy);
+            instance.ChangeCombatText(first.Name + " est vainqueur !");
+            instanceEnnemy.ChangeCombatText(first.Name + " est vainqueur !");
+            yield return new WaitForSeconds(UIPokeBattle.TextTime);
+            yield return this.addXP(enemy, instance);
             while (this.PokemonData.XP > (this.PokemonData.Level * this.PokemonData.Level * this.PokemonData.Level))
             {
                 yield return this.LevelUp(instance, instanceEnnemy);
             }
         }
-        else if (this.getCurrentHp() <= 0)
+        else if (this.CurrentHp <= 0)
         {
-            enemy.addXP(this);
+            instance.ChangeCombatText(enemy.Name + " est vainqueur !");
+            instanceEnnemy.ChangeCombatText(enemy.Name + " est vainqueur !");
+            yield return new WaitForSeconds(UIPokeBattle.TextTime);
+            yield return enemy.addXP(this, instanceEnnemy);
             while (enemy.PokemonData.XP > (enemy.PokemonData.Level * enemy.PokemonData.Level * enemy.PokemonData.Level))
             {
                 yield return enemy.LevelUp(instanceEnnemy, instance);
             }
         }
-        this.isFighting = false;
-        enemy.isFighting = false;
     }
 }

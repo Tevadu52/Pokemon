@@ -12,178 +12,1031 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a4a1bf39aee78d4e8e5899a3d02a9d9, type: 3}
   m_Name: PokemonSpecieDataBase
   m_EditorClassIdentifier: 
+  label: Pokemon Specie
   dataBase:
-  - nameSpecie: Tortank
-    id: 9
+  - nameSpecie: Bulbizarre
+    id: 1
     elements:
-    - {fileID: 11400000, guid: c97a561bc7f80e340ac68fdb48e9b25a, type: 2}
-    sprite: {fileID: 21300000, guid: de8daf4f14fb67e40ab43f217c6f09b4, type: 3}
-    stat:
-      baseHp: 79
-      baseAttack: 83
-      baseDefense: 100
-      baseAttackSpe: 85
-      baseDefenseSpe: 105
-      baseSpeed: 78
-      baseXP: 210
+    - {fileID: 11400000, guid: eae13b5dd7fdae44c8a149174eb42e61, type: 2}
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    frontSprite: {fileID: 21300000, guid: 8b0166ecbc3052f49a7025741d850921, type: 3}
+    backSprite: {fileID: 21300000, guid: d1c4a839481a14c458126ff27b62ab71, type: 3}
+    baseStats:
+      Hp: 45
+      Attack: 49
+      Defense: 49
+      AttackSpe: 65
+      DefenseSpe: 65
+      Speed: 45
+    baseXP: 64
     captureTaux: 45
     info:
-      poids: 85,5 kg
-      taille: 1,6 m
-      description: " Il augmente d\xE9lib\xE9r\xE9ment sa masse corporelle pour contrer
-        le recul de ses puissants jets d\u2019eau. "
+      poids: 6,9 kg
+      taille: 0,7 m
+      description: "Au matin de sa vie, la graine sur\nson dos lui fournit les \xE9l\xE9ments\ndont
+        il a besoin pour grandir."
+  - nameSpecie: Herbizarre
+    id: 2
+    elements:
+    - {fileID: 11400000, guid: eae13b5dd7fdae44c8a149174eb42e61, type: 2}
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    frontSprite: {fileID: 21300000, guid: 578f49f6f30ca7c4fafbf32483582f70, type: 3}
+    backSprite: {fileID: 21300000, guid: 78fc36fccfe4a044dbbae6c8567077f5, type: 3}
+    baseStats:
+      Hp: 60
+      Attack: 62
+      Defense: 63
+      AttackSpe: 80
+      DefenseSpe: 80
+      Speed: 60
+    baseXP: 142
+    captureTaux: 45
+    info:
+      poids: 13 kg
+      taille: 1 m
+      description: "Lorsque le bourgeon sur son dos\n\xE9clot, il r\xE9pand un doux
+        parfum\npour c\xE9l\xE9brer sa floraison."
+  - nameSpecie: Florizarre
+    id: 3
+    elements:
+    - {fileID: 11400000, guid: eae13b5dd7fdae44c8a149174eb42e61, type: 2}
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    frontSprite: {fileID: 21300000, guid: 674c9ae6c1f1229498c7ece8c432ada1, type: 3}
+    backSprite: {fileID: 21300000, guid: 5ecbc987cf5765c498d4d9c330159a4c, type: 3}
+    baseStats:
+      Hp: 80
+      Attack: 82
+      Defense: 83
+      AttackSpe: 100
+      DefenseSpe: 100
+      Speed: 80
+    baseXP: 263
+    captureTaux: 45
+    info:
+      poids: 100 kg
+      taille: 2 m
+      description: "Le parfum de sa fleur se fait plus\np\xE9n\xE9trant les lendemains
+        de pluie.\nCela app\xE2te les autres Pok\xE9mon."
+  - nameSpecie: "Salam\xE8che"
+    id: 4
+    elements:
+    - {fileID: 11400000, guid: 569901c1a44a9fd4492d62653dbde6a3, type: 2}
+    frontSprite: {fileID: 21300000, guid: 6d981b01dcad2064a999faa1d1b636b7, type: 3}
+    backSprite: {fileID: 21300000, guid: d8d3978898b5b3249be5c7eb97839afb, type: 3}
+    baseStats:
+      Hp: 39
+      Attack: 52
+      Defense: 43
+      AttackSpe: 60
+      DefenseSpe: 50
+      Speed: 65
+    baseXP: 62
+    captureTaux: 45
+    info:
+      poids: 8,5 kg
+      taille: 0,6 m
+      description: "La flamme de sa queue symbolise sa\nvitalit\xE9. Elle est intense
+        quand il\nest en bonne sant\xE9."
+  - nameSpecie: Reptincel
+    id: 5
+    elements:
+    - {fileID: 11400000, guid: 569901c1a44a9fd4492d62653dbde6a3, type: 2}
+    frontSprite: {fileID: 21300000, guid: 91eca7dc762dc3d4993bb8420a975556, type: 3}
+    backSprite: {fileID: 21300000, guid: a92436cc2dd701b4ba1d29a7f127ba70, type: 3}
+    baseStats:
+      Hp: 58
+      Attack: 64
+      Defense: 58
+      AttackSpe: 80
+      DefenseSpe: 65
+      Speed: 80
+    baseXP: 142
+    captureTaux: 45
+    info:
+      poids: 19 kg
+      taille: 1,1 m
+      description: "La nuit, la queue ardente du Reptincel\nbrille comme une \xE9toile
+        dans son\nrepaire montagneux."
   - nameSpecie: Dracaufeu
     id: 6
     elements:
     - {fileID: 11400000, guid: 569901c1a44a9fd4492d62653dbde6a3, type: 2}
     - {fileID: 11400000, guid: e3e23a7e2cca0ce44a25e0c19adbc2f0, type: 2}
-    sprite: {fileID: 21300000, guid: 15d342322ca23a1469e45297cb69bbf3, type: 3}
-    stat:
-      baseHp: 78
-      baseAttack: 104
-      baseDefense: 78
-      baseAttackSpe: 159
-      baseDefenseSpe: 115
-      baseSpeed: 100
-      baseXP: 240
+    frontSprite: {fileID: 21300000, guid: 755e13ee21f59964c826c2cccf41868c, type: 3}
+    backSprite: {fileID: 21300000, guid: 54bc21bdb42abde4f99c098d2b9417a3, type: 3}
+    baseStats:
+      Hp: 78
+      Attack: 84
+      Defense: 78
+      AttackSpe: 109
+      DefenseSpe: 85
+      Speed: 100
+    baseXP: 267
     captureTaux: 45
     info:
       poids: 90,5 kg
       taille: 1,7 m
-      description: " Quand Dracaufeu s\u2019\xE9nerve r\xE9ellement, la flamme au
-        bout de sa queue devient bleue. "
+      description: "On raconte que la flamme du\nDracaufeu s\u2019intensifie apr\xE8s\nun
+        combat difficile."
+  - nameSpecie: Carapuce
+    id: 7
+    elements:
+    - {fileID: 11400000, guid: c97a561bc7f80e340ac68fdb48e9b25a, type: 2}
+    frontSprite: {fileID: 21300000, guid: 97be7e7fd02bd7145b5691f3fda7ec1b, type: 3}
+    backSprite: {fileID: 21300000, guid: 777d84cd81846164a86b179cc225e772, type: 3}
+    baseStats:
+      Hp: 44
+      Attack: 48
+      Defense: 65
+      AttackSpe: 50
+      DefenseSpe: 64
+      Speed: 43
+    baseXP: 63
+    captureTaux: 45
+    info:
+      poids: 9 kg
+      taille: 0,5 m
+      description: "Il se r\xE9fugie dans sa carapace\net r\xE9plique en \xE9claboussant\nl\u2019ennemi
+        \xE0 la premi\xE8re occasion."
+  - nameSpecie: Carabaffe
+    id: 8
+    elements:
+    - {fileID: 11400000, guid: c97a561bc7f80e340ac68fdb48e9b25a, type: 2}
+    frontSprite: {fileID: 21300000, guid: 82961e2129b058a439ba2eb60af92e6b, type: 3}
+    backSprite: {fileID: 21300000, guid: f894cb98e3dc7304b969b3eeff565830, type: 3}
+    baseStats:
+      Hp: 59
+      Attack: 63
+      Defense: 80
+      AttackSpe: 65
+      DefenseSpe: 80
+      Speed: 58
+    baseXP: 142
+    captureTaux: 45
+    info:
+      poids: 22,5 kg
+      taille: 1 m
+      description: "On pr\xE9tend qu\u2019il vit 10 000 ans.\nSa queue duveteuse
+        est un\nsymbole de long\xE9vit\xE9 populaire."
+  - nameSpecie: Tortank
+    id: 9
+    elements:
+    - {fileID: 11400000, guid: c97a561bc7f80e340ac68fdb48e9b25a, type: 2}
+    frontSprite: {fileID: 21300000, guid: e6bc2b7531f18f645bb6b3f31ca38534, type: 3}
+    backSprite: {fileID: 21300000, guid: 6dd45726d9879e7448c88eda21c1fd75, type: 3}
+    baseStats:
+      Hp: 79
+      Attack: 83
+      Defense: 100
+      AttackSpe: 85
+      DefenseSpe: 105
+      Speed: 78
+    baseXP: 265
+    captureTaux: 45
+    info:
+      poids: 85,5 kg
+      taille: 1,6 m
+      description: "Les trombes d\u2019eau projet\xE9es par\nles canons de sa carapace
+        peuvent\npercer le m\xE9tal le plus r\xE9sistant."
+  - nameSpecie: Chenipan
+    id: 10
+    elements:
+    - {fileID: 11400000, guid: 4d274d5089fac924e87dcf29dabde694, type: 2}
+    frontSprite: {fileID: 21300000, guid: 689bd37dc0c95ea499c5ed98c7bf9b35, type: 3}
+    backSprite: {fileID: 21300000, guid: 081ee0b54eaae454b84e719df9628776, type: 3}
+    baseStats:
+      Hp: 45
+      Attack: 30
+      Defense: 35
+      AttackSpe: 20
+      DefenseSpe: 20
+      Speed: 45
+    baseXP: 39
+    captureTaux: 255
+    info:
+      poids: 2,9 kg
+      taille: 0,3 m
+      description: "Ses antennes rouges lib\xE8rent une\npuanteur qui repousse l\u2019ennemi.\nIl
+        grandit par mues r\xE9guli\xE8res."
+  - nameSpecie: Chrysacier
+    id: 11
+    elements:
+    - {fileID: 11400000, guid: 4d274d5089fac924e87dcf29dabde694, type: 2}
+    frontSprite: {fileID: 21300000, guid: 74b4ac289552fc34facebf2e4978e479, type: 3}
+    backSprite: {fileID: 21300000, guid: 2506e256e38bff349a2ef2bf62c2cf3f, type: 3}
+    baseStats:
+      Hp: 50
+      Attack: 20
+      Defense: 55
+      AttackSpe: 25
+      DefenseSpe: 25
+      Speed: 30
+    baseXP: 72
+    captureTaux: 120
+    info:
+      poids: 9,9 kg
+      taille: 0,7 m
+      description: "Son corps fr\xEAle est prot\xE9g\xE9 par sa\ncarapace d\u2019acier.
+        Il encaisse les\ncoups durs en attendant d\u2019\xE9voluer."
+  - nameSpecie: Papilusion
+    id: 12
+    elements:
+    - {fileID: 11400000, guid: 4d274d5089fac924e87dcf29dabde694, type: 2}
+    - {fileID: 11400000, guid: e3e23a7e2cca0ce44a25e0c19adbc2f0, type: 2}
+    frontSprite: {fileID: 21300000, guid: bcc8b70271867d04b90e793ee1ead1f7, type: 3}
+    backSprite: {fileID: 21300000, guid: c6e128dc94f62cd44ae2b44cf81c422f, type: 3}
+    baseStats:
+      Hp: 60
+      Attack: 45
+      Defense: 50
+      AttackSpe: 90
+      DefenseSpe: 80
+      Speed: 70
+    baseXP: 198
+    captureTaux: 45
+    info:
+      poids: 32 kg
+      taille: 1,1 m
+      description: "Il raffole du nectar des fleurs. Il\nest capable de rep\xE9rer
+        la plus\npetite quantit\xE9 de pollen."
+  - nameSpecie: Aspicot
+    id: 13
+    elements:
+    - {fileID: 11400000, guid: 4d274d5089fac924e87dcf29dabde694, type: 2}
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    frontSprite: {fileID: 21300000, guid: a2fdee5ff218a0745a7d061716d02a7c, type: 3}
+    backSprite: {fileID: 21300000, guid: c1462dabfb305974797e5c3db8baaec7, type: 3}
+    baseStats:
+      Hp: 40
+      Attack: 35
+      Defense: 30
+      AttackSpe: 20
+      DefenseSpe: 20
+      Speed: 50
+    baseXP: 39
+    captureTaux: 255
+    info:
+      poids: 3,2 kg
+      taille: 0,3 m
+      description: "Il mange chaque jour son poids en\nfeuilles. Il utilise l\u2019aiguillon
+        sur sa\nt\xEAte pour repousser l\u2019ennemi."
+  - nameSpecie: Coconfort
+    id: 14
+    elements:
+    - {fileID: 11400000, guid: 4d274d5089fac924e87dcf29dabde694, type: 2}
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    frontSprite: {fileID: 21300000, guid: 678349cbec412094e8085e5a80e0067e, type: 3}
+    backSprite: {fileID: 21300000, guid: 4c856ef117e88ee4d8486d3e27c4138c, type: 3}
+    baseStats:
+      Hp: 45
+      Attack: 25
+      Defense: 50
+      AttackSpe: 25
+      DefenseSpe: 25
+      Speed: 35
+    baseXP: 72
+    captureTaux: 120
+    info:
+      poids: 10 kg
+      taille: 0,6 m
+      description: "Il se cache sous les feuilles et les\nbranches pour fuir les
+        pr\xE9dateurs\nen attendant d\u2019\xE9voluer."
+  - nameSpecie: Dardargnan
+    id: 15
+    elements:
+    - {fileID: 11400000, guid: 4d274d5089fac924e87dcf29dabde694, type: 2}
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    frontSprite: {fileID: 21300000, guid: 59a8d263b93539f488ffaca21dd159c3, type: 3}
+    backSprite: {fileID: 21300000, guid: 6770c5f5d656f4d4d9999a885d31fd61, type: 3}
+    baseStats:
+      Hp: 65
+      Attack: 90
+      Defense: 40
+      AttackSpe: 45
+      DefenseSpe: 80
+      Speed: 75
+    baseXP: 178
+    captureTaux: 45
+    info:
+      poids: 29,5 kg
+      taille: 1 m
+      description: "Il virevolte rapidement autour de\nl\u2019ennemi et frappe de
+        son dard\nempoisonn\xE9 avant de d\xE9camper."
+  - nameSpecie: Roucool
+    id: 16
+    elements:
+    - {fileID: 11400000, guid: 5fec31789c93ee142a5f0976818c5736, type: 2}
+    - {fileID: 11400000, guid: e3e23a7e2cca0ce44a25e0c19adbc2f0, type: 2}
+    frontSprite: {fileID: 21300000, guid: b92ecf5c1c8158c41903f4bda892934b, type: 3}
+    backSprite: {fileID: 21300000, guid: c446a079848d1244f8214990a65a219f, type: 3}
+    baseStats:
+      Hp: 40
+      Attack: 45
+      Defense: 40
+      AttackSpe: 35
+      DefenseSpe: 35
+      Speed: 56
+    baseXP: 50
+    captureTaux: 255
+    info:
+      poids: 1,8 kg
+      taille: 0,3 m
+      description: "Ce Pok\xE9mon docile pr\xE9f\xE8re \xE9viter\nle combat. Toutefois,
+        il se montre\ntr\xE8s f\xE9roce quand on l\u2019agresse."
+  - nameSpecie: Roucoups
+    id: 17
+    elements:
+    - {fileID: 11400000, guid: 5fec31789c93ee142a5f0976818c5736, type: 2}
+    - {fileID: 11400000, guid: e3e23a7e2cca0ce44a25e0c19adbc2f0, type: 2}
+    frontSprite: {fileID: 21300000, guid: f40e5882849b65a4b993f1eb289096a5, type: 3}
+    backSprite: {fileID: 21300000, guid: ed669f35af969af4b95a7b75c0a09ed6, type: 3}
+    baseStats:
+      Hp: 63
+      Attack: 60
+      Defense: 55
+      AttackSpe: 50
+      DefenseSpe: 50
+      Speed: 71
+    baseXP: 122
+    captureTaux: 120
+    info:
+      poids: 30 kg
+      taille: 1,1 m
+      description: "Il survole son vaste territoire en\nqu\xEAte d\u2019une proie
+        avant de fondre\nsur elle toutes griffes en avant."
+  - nameSpecie: Roucarnage
+    id: 18
+    elements:
+    - {fileID: 11400000, guid: 5fec31789c93ee142a5f0976818c5736, type: 2}
+    - {fileID: 11400000, guid: e3e23a7e2cca0ce44a25e0c19adbc2f0, type: 2}
+    frontSprite: {fileID: 21300000, guid: e43c6f96c0009c14bbc694b79cac3dc9, type: 3}
+    backSprite: {fileID: 21300000, guid: ace56deadda6472479673396ab851e82, type: 3}
+    baseStats:
+      Hp: 83
+      Attack: 80
+      Defense: 75
+      AttackSpe: 70
+      DefenseSpe: 70
+      Speed: 101
+    baseXP: 216
+    captureTaux: 45
+    info:
+      poids: 39,5 kg
+      taille: 1,5 m
+      description: "En battant des ailes de toutes ses\nforces, Roucarnage g\xE9n\xE8re
+        une\nrafale \xE0 en d\xE9raciner les arbres."
+  - nameSpecie: Rattata
+    id: 19
+    elements:
+    - {fileID: 11400000, guid: 5fec31789c93ee142a5f0976818c5736, type: 2}
+    frontSprite: {fileID: 21300000, guid: 040d88fff416597448d14f9f716bbccd, type: 3}
+    backSprite: {fileID: 21300000, guid: 74d587b4fc6fbd14d82d38efee659f05, type: 3}
+    baseStats:
+      Hp: 30
+      Attack: 56
+      Defense: 35
+      AttackSpe: 25
+      DefenseSpe: 35
+      Speed: 72
+    baseXP: 51
+    captureTaux: 255
+    info:
+      poids: 3,5 kg
+      taille: 0,3 m
+      description: "D\u2019une prudence extr\xEAme, sa nature\nrobuste lui permet
+        de s\u2019adapter \xE0\ntous les terrains."
+  - nameSpecie: Rattatac
+    id: 20
+    elements:
+    - {fileID: 11400000, guid: 5fec31789c93ee142a5f0976818c5736, type: 2}
+    frontSprite: {fileID: 21300000, guid: 71c4bb9da05c5754fa4ae2d70362d497, type: 3}
+    backSprite: {fileID: 21300000, guid: 9bc12d05837f1334cb341143baa85204, type: 3}
+    baseStats:
+      Hp: 55
+      Attack: 81
+      Defense: 60
+      AttackSpe: 50
+      DefenseSpe: 70
+      Speed: 97
+    baseXP: 145
+    captureTaux: 127
+    info:
+      poids: 18,5 kg
+      taille: 0,7 m
+      description: "Ses pattes arri\xE8re lui permettent de traverser les\nrivi\xE8res.
+        Il est toujours en qu\xEAte de nourriture."
+  - nameSpecie: Piafabec
+    id: 21
+    elements:
+    - {fileID: 11400000, guid: 5fec31789c93ee142a5f0976818c5736, type: 2}
+    - {fileID: 11400000, guid: e3e23a7e2cca0ce44a25e0c19adbc2f0, type: 2}
+    frontSprite: {fileID: 21300000, guid: 40862a1c63210ad44b2d773fbba15fbe, type: 3}
+    backSprite: {fileID: 21300000, guid: befc89997a4bd7b41adf8f3873982c67, type: 3}
+    baseStats:
+      Hp: 40
+      Attack: 60
+      Defense: 30
+      AttackSpe: 31
+      DefenseSpe: 31
+      Speed: 70
+    baseXP: 52
+    captureTaux: 255
+    info:
+      poids: 2 kg
+      taille: 0,3 m
+      description: "Il fait battre vigoureusement ses\npetites ailes pour voler et
+        cherche\n\xE0 manger dans l\u2019herbe avec le bec."
+  - nameSpecie: Rapasdepic
+    id: 22
+    elements:
+    - {fileID: 11400000, guid: 5fec31789c93ee142a5f0976818c5736, type: 2}
+    - {fileID: 11400000, guid: e3e23a7e2cca0ce44a25e0c19adbc2f0, type: 2}
+    frontSprite: {fileID: 21300000, guid: 565b9f36ac558c34983db87273f7fd96, type: 3}
+    backSprite: {fileID: 21300000, guid: efe5766bb6dd1d648bcb7b24f51a25f8, type: 3}
+    baseStats:
+      Hp: 65
+      Attack: 90
+      Defense: 65
+      AttackSpe: 61
+      DefenseSpe: 61
+      Speed: 100
+    baseXP: 155
+    captureTaux: 90
+    info:
+      poids: 38 kg
+      taille: 1,2 m
+      description: "Il a assez d\u2019\xE9nergie pour voler\ntoute la journ\xE9e
+        avec ses grandes\nailes. Il frappe de son bec ac\xE9r\xE9."
+  - nameSpecie: Abo
+    id: 23
+    elements:
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    frontSprite: {fileID: 21300000, guid: 188df0ffffe3b0d4ab1f059a308262b0, type: 3}
+    backSprite: {fileID: 21300000, guid: 3eb0d81f36e468440bf0523cc53d682a, type: 3}
+    baseStats:
+      Hp: 35
+      Attack: 60
+      Defense: 44
+      AttackSpe: 40
+      DefenseSpe: 54
+      Speed: 55
+    baseXP: 58
+    captureTaux: 255
+    info:
+      poids: 6,9 kg
+      taille: 2 m
+      description: "Il se faufile dans l\u2019herbe sans un\nbruit et frappe dans
+        le dos quand\nsa proie s\u2019y attend le moins."
+  - nameSpecie: Arbok
+    id: 24
+    elements:
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    frontSprite: {fileID: 21300000, guid: 161fb8c12334e7d4f8acacefd790ce98, type: 3}
+    backSprite: {fileID: 21300000, guid: 493b4f89f55b6bd4f8fce6ffe1b40822, type: 3}
+    baseStats:
+      Hp: 60
+      Attack: 95
+      Defense: 69
+      AttackSpe: 65
+      DefenseSpe: 79
+      Speed: 80
+    baseXP: 157
+    captureTaux: 90
+    info:
+      poids: 65 kg
+      taille: 3,5 m
+      description: "Il utilise la marque sur son ventre\npour intimider l\u2019ennemi.
+        Il \xE9touffe\nl\u2019ennemi p\xE9trifi\xE9 par la peur."
   - nameSpecie: Pikachu
     id: 25
     elements:
     - {fileID: 11400000, guid: c1685d950192cfa46b6080982152f46c, type: 2}
-    sprite: {fileID: 21300000, guid: 54a325ca7264eb94f99fff3233205aeb, type: 3}
-    stat:
-      baseHp: 35
-      baseAttack: 55
-      baseDefense: 40
-      baseAttackSpe: 50
-      baseDefenseSpe: 50
-      baseSpeed: 90
-      baseXP: 112
+    frontSprite: {fileID: 21300000, guid: 6d8608ae2fca1c24cb4284fa00fd4f65, type: 3}
+    backSprite: {fileID: 21300000, guid: e233d7ca6ff2390418ffb73ba65da924, type: 3}
+    baseStats:
+      Hp: 35
+      Attack: 55
+      Defense: 40
+      AttackSpe: 50
+      DefenseSpe: 50
+      Speed: 90
+    baseXP: 112
     captureTaux: 190
     info:
-      poids: 6,0 kg
+      poids: 6 kg
       taille: 0,4 m
-      description: " Quand il s\u2019\xE9nerve, il lib\xE8re instantan\xE9ment l\u2019\xE9nergie
-        emmagasin\xE9e dans les poches de ses joues. "
-  - nameSpecie: Simiabraz
-    id: 392
+      description: "Il lui arrive de remettre d\u2019aplomb\nun Pikachu alli\xE9
+        en lui envoyant\nune d\xE9charge \xE9lectrique."
+  - nameSpecie: Raichu
+    id: 26
     elements:
-    - {fileID: 11400000, guid: 569901c1a44a9fd4492d62653dbde6a3, type: 2}
-    - {fileID: 11400000, guid: 8370f7a48a4557642b677f0a92945b0a, type: 2}
-    sprite: {fileID: 21300000, guid: ecd22175eb62f614f9a9b452f3e582cb, type: 3}
-    stat:
-      baseHp: 76
-      baseAttack: 104
-      baseDefense: 71
-      baseAttackSpe: 104
-      baseDefenseSpe: 71
-      baseSpeed: 108
-      baseXP: 240
-    captureTaux: 45
+    - {fileID: 11400000, guid: c1685d950192cfa46b6080982152f46c, type: 2}
+    frontSprite: {fileID: 21300000, guid: 8817d2da9a72ad1448131a81478075b5, type: 3}
+    backSprite: {fileID: 21300000, guid: 497017d7af0dac3488fde2d41e2e0161, type: 3}
+    baseStats:
+      Hp: 60
+      Attack: 90
+      Defense: 55
+      AttackSpe: 90
+      DefenseSpe: 80
+      Speed: 110
+    baseXP: 243
+    captureTaux: 75
     info:
-      poids: 55,0 kg
-      taille: 1,2 m
-      description: " Il se joue de ses adversaires gr\xE2ce \xE0 sa vitesse. Son
-        style de combat sp\xE9cial sollicite ses quatre membres. "
-  - nameSpecie: Miaouss
-    id: 52
+      poids: 30 kg
+      taille: 0,8 m
+      description: "Il se prot\xE8ge des d\xE9charges gr\xE2ce\n\xE0 sa queue qui
+        dissipe l\u2019\xE9lectricit\xE9\ndans le sol."
+  - nameSpecie: Sabelette
+    id: 27
     elements:
-    - {fileID: 11400000, guid: 5fec31789c93ee142a5f0976818c5736, type: 2}
-    sprite: {fileID: 21300000, guid: bfed7ecefe63dad4f976819e21a918aa, type: 3}
-    stat:
-      baseHp: 40
-      baseAttack: 45
-      baseDefense: 35
-      baseAttackSpe: 40
-      baseDefenseSpe: 40
-      baseSpeed: 90
-      baseXP: 58
+    - {fileID: 11400000, guid: d61932bf1190f9842a4601352f31f8cf, type: 2}
+    frontSprite: {fileID: 21300000, guid: e0f9a8bde44c16349b3f13a047278560, type: 3}
+    backSprite: {fileID: 21300000, guid: a11da60aa1e3a0d46b126f29e0a6ad90, type: 3}
+    baseStats:
+      Hp: 50
+      Attack: 75
+      Defense: 85
+      AttackSpe: 20
+      DefenseSpe: 30
+      Speed: 40
+    baseXP: 60
     captureTaux: 255
     info:
-      poids: 4,2 kg
+      poids: 12 kg
+      taille: 0,6 m
+      description: "Il vit sur des terres arides \xE9pargn\xE9es\npar la pluie. Il
+        se roule en boule pour\nse prot\xE9ger."
+  - nameSpecie: Sablaireau
+    id: 28
+    elements:
+    - {fileID: 11400000, guid: d61932bf1190f9842a4601352f31f8cf, type: 2}
+    frontSprite: {fileID: 21300000, guid: 03f8bdef6e14fcd458ec6967cc438626, type: 3}
+    backSprite: {fileID: 21300000, guid: 32956ab5baa77f240be9cf999b44f832, type: 3}
+    baseStats:
+      Hp: 75
+      Attack: 100
+      Defense: 110
+      AttackSpe: 45
+      DefenseSpe: 55
+      Speed: 65
+    baseXP: 158
+    captureTaux: 90
+    info:
+      poids: 29,5 kg
+      taille: 1 m
+      description: "Il se met en boule pour percuter\nl\u2019ennemi. Ses \xE9pines
+        aiguis\xE9es\nfont beaucoup de d\xE9g\xE2ts."
+  - nameSpecie: "Nidoran\u2640"
+    id: 29
+    elements:
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    frontSprite: {fileID: 21300000, guid: 0137f3f8ce5abc949ad0b8d40f949bae, type: 3}
+    backSprite: {fileID: 21300000, guid: 15c0eb06b81a7a64f88de6184ae71cc1, type: 3}
+    baseStats:
+      Hp: 55
+      Attack: 47
+      Defense: 52
+      AttackSpe: 40
+      DefenseSpe: 40
+      Speed: 41
+    baseXP: 55
+    captureTaux: 235
+    info:
+      poids: 7 kg
       taille: 0,4 m
-      description: " Il passe ses journ\xE9es \xE0 dormir. La nuit venue, il patrouille
-        sur son territoire, les yeux brillants. "
-  - nameSpecie: Lucario
-    id: 448
+      description: "Bien qu\u2019il rechigne \xE0 se battre, une\ngoutte du poison
+        s\xE9cr\xE9t\xE9 par ses\npiquants peut s\u2019av\xE9rer fatale."
+  - nameSpecie: Nidorina
+    id: 30
     elements:
-    - {fileID: 11400000, guid: 8370f7a48a4557642b677f0a92945b0a, type: 2}
-    - {fileID: 11400000, guid: c811067e3a8216c44ba22b59e816c786, type: 2}
-    sprite: {fileID: 21300000, guid: 3e2ee64a401cd874c833c93f4a5b35b4, type: 3}
-    stat:
-      baseHp: 70
-      baseAttack: 110
-      baseDefense: 70
-      baseAttackSpe: 115
-      baseDefenseSpe: 70
-      baseSpeed: 90
-      baseXP: 184
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    frontSprite: {fileID: 21300000, guid: e6f6656f15458b64fa42bb25547823d5, type: 3}
+    backSprite: {fileID: 21300000, guid: a64d84f599a922f43b7a41657f8a778e, type: 3}
+    baseStats:
+      Hp: 70
+      Attack: 62
+      Defense: 67
+      AttackSpe: 55
+      DefenseSpe: 55
+      Speed: 56
+    baseXP: 128
+    captureTaux: 120
+    info:
+      poids: 20 kg
+      taille: 0,8 m
+      description: "Ce Pok\xE9mon dresse ses piquants\nen cas de danger. Ils poussent\nmoins
+        vite que ceux de Nidorino."
+  - nameSpecie: Nidoqueen
+    id: 31
+    elements:
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    - {fileID: 11400000, guid: d61932bf1190f9842a4601352f31f8cf, type: 2}
+    frontSprite: {fileID: 21300000, guid: 5598162ce34a1f54db9299c929e03c24, type: 3}
+    backSprite: {fileID: 21300000, guid: 59afde124df626044866a3b27f32ad69, type: 3}
+    baseStats:
+      Hp: 90
+      Attack: 92
+      Defense: 87
+      AttackSpe: 75
+      DefenseSpe: 85
+      Speed: 76
+    baseXP: 253
     captureTaux: 45
     info:
-      poids: 54,0 kg
-      taille: 1,2 m
-      description: " On dit qu\u2019il peut rep\xE9rer ses ennemis, m\xEAme lorsqu\u2019ils
-        sont invisibles, car il ressent leur aura. "
-  - nameSpecie: Meganium
-    id: 154
+      poids: 60 kg
+      taille: 1,3 m
+      description: "Son corps est recouvert d\u2019\xE9cailles\nsolides. Il donnera
+        sa vie pour\nsecourir les petits de son terrier."
+  - nameSpecie: "Nidoran\u2642"
+    id: 32
     elements:
-    - {fileID: 11400000, guid: eae13b5dd7fdae44c8a149174eb42e61, type: 2}
-    sprite: {fileID: 21300000, guid: afde91f5542e416489b86e7fbf9bff2b, type: 3}
-    stat:
-      baseHp: 80
-      baseAttack: 82
-      baseDefense: 100
-      baseAttackSpe: 83
-      baseDefenseSpe: 100
-      baseSpeed: 80
-      baseXP: 236
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    frontSprite: {fileID: 21300000, guid: 54430adf5a355954e949c24ae1d3d20b, type: 3}
+    backSprite: {fileID: 21300000, guid: 9a7c2f0dec2e8504685e5ce349a14187, type: 3}
+    baseStats:
+      Hp: 46
+      Attack: 57
+      Defense: 40
+      AttackSpe: 40
+      DefenseSpe: 40
+      Speed: 50
+    baseXP: 55
+    captureTaux: 235
+    info:
+      poids: 9 kg
+      taille: 0,5 m
+      description: "Il jauge le terrain en laissant\nses oreilles d\xE9passer de
+        l\u2019herbe.\nIl se d\xE9fend avec sa corne toxique."
+  - nameSpecie: Nidorino
+    id: 33
+    elements:
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    frontSprite: {fileID: 21300000, guid: 49c65f5ea281a404692cda3438458253, type: 3}
+    backSprite: {fileID: 21300000, guid: 61dc5a35d18bc804491a915b27a2c028, type: 3}
+    baseStats:
+      Hp: 61
+      Attack: 72
+      Defense: 57
+      AttackSpe: 55
+      DefenseSpe: 55
+      Speed: 65
+    baseXP: 128
+    captureTaux: 120
+    info:
+      poids: 19,5 kg
+      taille: 0,9 m
+      description: "D\u2019un temp\xE9rament violent, il\nempale l\u2019ennemi sur
+        sa corne\nqui distille un poison puissant."
+  - nameSpecie: Nidoking
+    id: 34
+    elements:
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    - {fileID: 11400000, guid: d61932bf1190f9842a4601352f31f8cf, type: 2}
+    frontSprite: {fileID: 21300000, guid: c84093cf0c3c650469f6d981e965d734, type: 3}
+    backSprite: {fileID: 21300000, guid: e738e47c5ec819c49a60670b91b3d855, type: 3}
+    baseStats:
+      Hp: 81
+      Attack: 102
+      Defense: 77
+      AttackSpe: 85
+      DefenseSpe: 75
+      Speed: 85
+    baseXP: 253
     captureTaux: 45
     info:
-      poids: 100,5 kg
-      taille: 1,8 m
-      description: " Toute personne se tenant pr\xE8s de lui se sent revigor\xE9e,
-        comme si elle respirait l\u2019air frais de la for\xEAt. "
-  - nameSpecie: Ronflex
-    id: 143
+      poids: 62 kg
+      taille: 1,4 m
+      description: "Un coup de sa puissante queue\npeut briser un poteau t\xE9l\xE9phonique\ncomme
+        une allumette."
+  - nameSpecie: "M\xE9lof\xE9e"
+    id: 35
     elements:
-    - {fileID: 11400000, guid: 5fec31789c93ee142a5f0976818c5736, type: 2}
-    sprite: {fileID: 21300000, guid: 5d8575ea866b76140b8c5e192ce8aa36, type: 3}
-    stat:
-      baseHp: 160
-      baseAttack: 110
-      baseDefense: 65
-      baseAttackSpe: 65
-      baseDefenseSpe: 110
-      baseSpeed: 30
-      baseXP: 189
+    - {fileID: 11400000, guid: f09729ab8f02c4a418f73bc3a2f40a17, type: 2}
+    frontSprite: {fileID: 21300000, guid: f70a1a5a241c23241a9f949951fc006f, type: 3}
+    backSprite: {fileID: 21300000, guid: 68927cda8537f224daded82ce5d58384, type: 3}
+    baseStats:
+      Hp: 70
+      Attack: 45
+      Defense: 48
+      AttackSpe: 60
+      DefenseSpe: 65
+      Speed: 35
+    baseXP: 113
+    captureTaux: 150
+    info:
+      poids: 7,5 kg
+      taille: 0,6 m
+      description: "On dit que ceux qui voient danser\nun groupe de M\xE9lof\xE9e
+        sous la pleine\nlune conna\xEEtront un grand bonheur."
+  - nameSpecie: "M\xE9lodelfe"
+    id: 36
+    elements:
+    - {fileID: 11400000, guid: f09729ab8f02c4a418f73bc3a2f40a17, type: 2}
+    frontSprite: {fileID: 21300000, guid: 7c7bb4c89525be4408636295e57b283f, type: 3}
+    backSprite: {fileID: 21300000, guid: ece1b96c25f1eeb4aa4e70c99058d0cb, type: 3}
+    baseStats:
+      Hp: 95
+      Attack: 70
+      Defense: 73
+      AttackSpe: 95
+      DefenseSpe: 90
+      Speed: 60
+    baseXP: 242
     captureTaux: 25
     info:
-      poids: 460,0 kg
-      taille: 2,1 m
-      description: " Quand il ne dort pas, ce glouton passe son temps \xE0 manger.
-        Il peut ingurgiter jusqu\u2019\xE0 400 kg de nourriture en une seule journ\xE9e. "
-  - nameSpecie: Mewtwo
-    id: 150
+      poids: 40 kg
+      taille: 1,3 m
+      description: "Il est tr\xE8s farouche et se laisse\nrarement approcher. De
+        plus, il\nd\xE9tecte les sons \xE0 plus d\u20191 km."
+  - nameSpecie: Goupix
+    id: 37
     elements:
-    - {fileID: 11400000, guid: e5557e3dab3739a4aa4678980067183b, type: 2}
-    sprite: {fileID: 21300000, guid: 247057e0f00a5094a959b24020b4daf6, type: 3}
-    stat:
-      baseHp: 106
-      baseAttack: 110
-      baseDefense: 90
-      baseAttackSpe: 154
-      baseDefenseSpe: 90
-      baseSpeed: 130
-      baseXP: 306
-    captureTaux: 3
+    - {fileID: 11400000, guid: 569901c1a44a9fd4492d62653dbde6a3, type: 2}
+    frontSprite: {fileID: 21300000, guid: 47016b150a0a54d49bfea0954de584eb, type: 3}
+    backSprite: {fileID: 21300000, guid: 0a9145f0d3a42344aabb009d148514d2, type: 3}
+    baseStats:
+      Hp: 38
+      Attack: 41
+      Defense: 40
+      AttackSpe: 50
+      DefenseSpe: 65
+      Speed: 65
+    baseXP: 60
+    captureTaux: 190
     info:
-      poids: 122,0 kg
-      taille: 2,0 m
-      description: " Son ADN est presque le m\xEAme que celui de Mew, mais sa taille
-        et son caract\xE8re sont tr\xE8s diff\xE9rents. "
+      poids: 9,9 kg
+      taille: 0,6 m
+      description: "Il envoie des boules de feu. Avec\nl\u2019\xE2ge, ses six queues
+        en forment de\nnouvelles."
+  - nameSpecie: Feunard
+    id: 38
+    elements:
+    - {fileID: 11400000, guid: 569901c1a44a9fd4492d62653dbde6a3, type: 2}
+    frontSprite: {fileID: 21300000, guid: 363ca9ab0d95ae54598a04e4f55ac9c1, type: 3}
+    backSprite: {fileID: 21300000, guid: 21631e20a9454e3488428cab38d1dd98, type: 3}
+    baseStats:
+      Hp: 73
+      Attack: 76
+      Defense: 75
+      AttackSpe: 81
+      DefenseSpe: 100
+      Speed: 100
+    baseXP: 177
+    captureTaux: 75
+    info:
+      poids: 19,9 kg
+      taille: 1,1 m
+      description: "On raconte que ses neuf queues\nd\xE9tiennent un pouvoir mystique.\nIl
+        peut vivre pendant mille ans."
+  - nameSpecie: Rondoudou
+    id: 39
+    elements:
+    - {fileID: 11400000, guid: 5fec31789c93ee142a5f0976818c5736, type: 2}
+    - {fileID: 11400000, guid: f09729ab8f02c4a418f73bc3a2f40a17, type: 2}
+    frontSprite: {fileID: 21300000, guid: f06446b36ef12924c8052570b60e1dd6, type: 3}
+    backSprite: {fileID: 21300000, guid: 84a27067c3deb414eb1b0bf53e85e190, type: 3}
+    baseStats:
+      Hp: 115
+      Attack: 45
+      Defense: 20
+      AttackSpe: 45
+      DefenseSpe: 25
+      Speed: 20
+    baseXP: 95
+    captureTaux: 170
+    info:
+      poids: 5,5 kg
+      taille: 0,5 m
+      description: "Lorsqu\u2019il roule ses grands yeux\nronds, il entonne une berceuse\nqui
+        endort son auditoire."
+  - nameSpecie: Grodoudou
+    id: 40
+    elements:
+    - {fileID: 11400000, guid: 5fec31789c93ee142a5f0976818c5736, type: 2}
+    - {fileID: 11400000, guid: f09729ab8f02c4a418f73bc3a2f40a17, type: 2}
+    frontSprite: {fileID: 21300000, guid: 299c1e881ea3a90489a48e3616688e3b, type: 3}
+    backSprite: {fileID: 21300000, guid: f8b115a4cef03b64db92a7e7c57ef363, type: 3}
+    baseStats:
+      Hp: 140
+      Attack: 70
+      Defense: 45
+      AttackSpe: 85
+      DefenseSpe: 50
+      Speed: 45
+    baseXP: 218
+    captureTaux: 50
+    info:
+      poids: 12 kg
+      taille: 1 m
+      description: "Sa fourrure est d\u2019une douceur\nincomparable au toucher.
+        Il \npeut gonfler en aspirant de l\u2019air."
+  - nameSpecie: Nosferapti
+    id: 41
+    elements:
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    - {fileID: 11400000, guid: e3e23a7e2cca0ce44a25e0c19adbc2f0, type: 2}
+    frontSprite: {fileID: 21300000, guid: 82800086f3b34cf4892e19a03c30cc6f, type: 3}
+    backSprite: {fileID: 21300000, guid: be2e0495e0ca81d4289a39cd7df48e7e, type: 3}
+    baseStats:
+      Hp: 40
+      Attack: 45
+      Defense: 35
+      AttackSpe: 30
+      DefenseSpe: 40
+      Speed: 55
+    baseXP: 49
+    captureTaux: 255
+    info:
+      poids: 7,5 kg
+      taille: 0,8 m
+      description: "D\xE9pourvu d\u2019yeux, il se rep\xE8re dans l\u2019espace\ngr\xE2ce
+        aux ultrasons qu\u2019il \xE9met avec sa bouche."
+  - nameSpecie: Nosferalto
+    id: 42
+    elements:
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    - {fileID: 11400000, guid: e3e23a7e2cca0ce44a25e0c19adbc2f0, type: 2}
+    frontSprite: {fileID: 21300000, guid: c7ac04c050f3b024995c4dccc16e13a6, type: 3}
+    backSprite: {fileID: 21300000, guid: 14f8b2d0c1afbe4409a46930af1ce210, type: 3}
+    baseStats:
+      Hp: 75
+      Attack: 80
+      Defense: 70
+      AttackSpe: 65
+      DefenseSpe: 75
+      Speed: 90
+    baseXP: 159
+    captureTaux: 90
+    info:
+      poids: 55 kg
+      taille: 1,6 m
+      description: "Ses crocs ac\xE9r\xE9s et creux peuvent\np\xE9n\xE9trer la plus
+        \xE9paisse des peaux\net sucer le sang de la victime."
+  - nameSpecie: Mystherbe
+    id: 43
+    elements:
+    - {fileID: 11400000, guid: eae13b5dd7fdae44c8a149174eb42e61, type: 2}
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    frontSprite: {fileID: 21300000, guid: 41e1b5e6a668e564ebbe51cc34cd1f8e, type: 3}
+    backSprite: {fileID: 21300000, guid: 5293583d3d081b3499dbefeb462ca9a3, type: 3}
+    baseStats:
+      Hp: 45
+      Attack: 50
+      Defense: 55
+      AttackSpe: 75
+      DefenseSpe: 65
+      Speed: 30
+    baseXP: 64
+    captureTaux: 255
+    info:
+      poids: 5,4 kg
+      taille: 0,5 m
+      description: "En journ\xE9e, il plante ses pieds-racines\ndans le sol. La nuit,
+        il se prom\xE8ne en\nsemant des graines."
+  - nameSpecie: Ortide
+    id: 44
+    elements:
+    - {fileID: 11400000, guid: eae13b5dd7fdae44c8a149174eb42e61, type: 2}
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    frontSprite: {fileID: 21300000, guid: 947776acf050fe1459083f7e9f2651b7, type: 3}
+    backSprite: {fileID: 21300000, guid: 66654dcbcde96644bb1add3811ab74cb, type: 3}
+    baseStats:
+      Hp: 60
+      Attack: 65
+      Defense: 70
+      AttackSpe: 85
+      DefenseSpe: 75
+      Speed: 40
+    baseXP: 138
+    captureTaux: 120
+    info:
+      poids: 8,6 kg
+      taille: 0,8 m
+      description: "L\u2019odeur du nectar de sa bouche est\nsi r\xE9pugnante qu\u2019elle
+        agresse les\nnarines \xE0 deux kilom\xE8tres."
+  - nameSpecie: Rafflesia
+    id: 45
+    elements:
+    - {fileID: 11400000, guid: eae13b5dd7fdae44c8a149174eb42e61, type: 2}
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    frontSprite: {fileID: 21300000, guid: b5510dba0c71e604f9949e0ee9c67054, type: 3}
+    backSprite: {fileID: 21300000, guid: 9d795bbe215929c449cc73463355a330, type: 3}
+    baseStats:
+      Hp: 75
+      Attack: 80
+      Defense: 85
+      AttackSpe: 110
+      DefenseSpe: 90
+      Speed: 50
+    baseXP: 245
+    captureTaux: 45
+    info:
+      poids: 18,6 kg
+      taille: 1,2 m
+      description: "Ses p\xE9tales sont les plus grands\ndu monde. Il marche en r\xE9pandant\nun
+        pollen extr\xEAmement allerg\xE8ne."
+  - nameSpecie: Paras
+    id: 46
+    elements:
+    - {fileID: 11400000, guid: 4d274d5089fac924e87dcf29dabde694, type: 2}
+    - {fileID: 11400000, guid: eae13b5dd7fdae44c8a149174eb42e61, type: 2}
+    frontSprite: {fileID: 21300000, guid: 9fc805b91849b804da40a3eae9e61243, type: 3}
+    backSprite: {fileID: 21300000, guid: 110784c887a6713438d18703df89f780, type: 3}
+    baseStats:
+      Hp: 35
+      Attack: 70
+      Defense: 55
+      AttackSpe: 45
+      DefenseSpe: 55
+      Speed: 25
+    baseXP: 57
+    captureTaux: 190
+    info:
+      poids: 5,4 kg
+      taille: 0,3 m
+      description: "Des champignons appel\xE9s \u201Ctochukaso\u201D\npoussent sur
+        son dos. Ils \xE9voluent\navec le Paras h\xF4te."
+  - nameSpecie: Parasect
+    id: 47
+    elements:
+    - {fileID: 11400000, guid: 4d274d5089fac924e87dcf29dabde694, type: 2}
+    - {fileID: 11400000, guid: eae13b5dd7fdae44c8a149174eb42e61, type: 2}
+    frontSprite: {fileID: 21300000, guid: beb7746b5e2cddd4daa032646f48ed35, type: 3}
+    backSprite: {fileID: 21300000, guid: 4fce2611798beee47b01259bc415c35c, type: 3}
+    baseStats:
+      Hp: 60
+      Attack: 95
+      Defense: 80
+      AttackSpe: 60
+      DefenseSpe: 80
+      Speed: 30
+    baseXP: 142
+    captureTaux: 75
+    info:
+      poids: 29,5 kg
+      taille: 1 m
+      description: "Un champignon parasite plus gros\nque Parasect contr\xF4le son
+        corps.\nIl r\xE9pand des spores empoisonn\xE9es."
+  - nameSpecie: Mimitoss
+    id: 48
+    elements:
+    - {fileID: 11400000, guid: 4d274d5089fac924e87dcf29dabde694, type: 2}
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    frontSprite: {fileID: 21300000, guid: 877da357a59e8814eb557865c14efe68, type: 3}
+    backSprite: {fileID: 21300000, guid: d058ef936b45c2d43adce34883a9fd75, type: 3}
+    baseStats:
+      Hp: 60
+      Attack: 55
+      Defense: 50
+      AttackSpe: 40
+      DefenseSpe: 55
+      Speed: 45
+    baseXP: 61
+    captureTaux: 190
+    info:
+      poids: 30 kg
+      taille: 1 m
+      description: "Ses grands yeux sont en fait des\namas d\u2019yeux minuscules.
+        La nuit,\nil est attir\xE9 par la lumi\xE8re."
+  - nameSpecie: "A\xE9romite"
+    id: 49
+    elements:
+    - {fileID: 11400000, guid: 4d274d5089fac924e87dcf29dabde694, type: 2}
+    - {fileID: 11400000, guid: 96e366eb53f832e4da341d2c61b9d393, type: 2}
+    frontSprite: {fileID: 21300000, guid: f5e54ff6c9b37c6469af2f923b8e27c0, type: 3}
+    backSprite: {fileID: 21300000, guid: c4a9ee3f9e12a3747a7256a962ab8c62, type: 3}
+    baseStats:
+      Hp: 70
+      Attack: 65
+      Defense: 60
+      AttackSpe: 90
+      DefenseSpe: 75
+      Speed: 90
+    baseXP: 158
+    captureTaux: 75
+    info:
+      poids: 12,5 kg
+      taille: 1,5 m
+      description: "Il r\xE9pand ses \xE9cailles poudreuses\nen battant des ailes.
+        Elles sont\ntoxiques au toucher."
+  - nameSpecie: Taupiqueur
+    id: 50
+    elements:
+    - {fileID: 11400000, guid: d61932bf1190f9842a4601352f31f8cf, type: 2}
+    frontSprite: {fileID: 21300000, guid: 818ed64d278423940803130eee6b13fa, type: 3}
+    backSprite: {fileID: 21300000, guid: 3d019da8113f5ce48859693a7b39e2c5, type: 3}
+    baseStats:
+      Hp: 10
+      Attack: 55
+      Defense: 25
+      AttackSpe: 35
+      DefenseSpe: 45
+      Speed: 95
+    baseXP: 53
+    captureTaux: 255
+    info:
+      poids: 0,8 kg
+      taille: 0,2 m
+      description: "Un Pok\xE9mon qui vit sous terre.\nHabitu\xE9 aux souterrains,
+        il fuit la\nlumi\xE8re du jour."

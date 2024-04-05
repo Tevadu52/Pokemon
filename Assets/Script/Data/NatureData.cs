@@ -11,7 +11,4 @@ public class NatureData
     public float speed = 1.0f;
     public float attackSpe = 1.0f;
     public float defenseSpe = 1.0f;
-    public float health = 1.0f;
-
-    public NatureData() { health = 1f; attack = 1f; defense = 1f; speed = 1f; }
 }

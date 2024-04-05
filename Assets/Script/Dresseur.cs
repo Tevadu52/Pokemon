@@ -47,7 +47,6 @@ public class Dresseur : MonoBehaviour
             Dresseur Opponant = raycastHit.collider.transform.parent.gameObject.GetComponent<Dresseur>();
             if (raycastHit.collider.gameObject != this.gameObject && !isFighting && !Opponant.getIsFighting())
             {
-                Debug.Log(this.getNameDresseur() + " a vu " + Opponant.getNameDresseur());
                 StartCoroutine(match(Opponant));
             }
         }
@@ -114,15 +113,15 @@ public class Dresseur : MonoBehaviour
 
     public bool calcul9G(Pokemon pokemon)
     {
-        int PVMAX = pokemon.getHp();
-        int PV = pokemon.getCurrentHp();
-        int TAUX = pokemon.getSpecie().CaptureTaux;
+        int PVMAX = pokemon.Hp;
+        int PV = pokemon.CurrentHp;
+        int TAUX = pokemon.Specie.CaptureTaux;
         float STATUT = 1f;
         //STATUT = pokemon.getStatut(); Le satut du pokemon
         float TB = 1f;
         //BALL = 1; Le type de pokeball utiliser
         // TB = TB * BALL
-        int NIVEAU = pokemon.getLevel();
+        int NIVEAU = pokemon.Level;
         float FAIBLENIVEAU = 1f;
         if (NIVEAU < 13)
         {
@@ -130,15 +129,15 @@ public class Dresseur : MonoBehaviour
         }
         int NBBADGE = this.Badge;
         float BADGEREQUIS = 0; ;
-        if (pokemon.getLevel() <= 25) { BADGEREQUIS = 0; }
-        else if (pokemon.getLevel() <= 30) { BADGEREQUIS = 1; }
-        else if (pokemon.getLevel() <= 35) { BADGEREQUIS = 2; }
-        else if (pokemon.getLevel() <= 40) { BADGEREQUIS = 3; }
-        else if (pokemon.getLevel() <= 45) { BADGEREQUIS = 4; }
-        else if (pokemon.getLevel() <= 50) { BADGEREQUIS = 5; }
-        else if (pokemon.getLevel() <= 55) { BADGEREQUIS = 6; }
-        else if (pokemon.getLevel() <= 60) { BADGEREQUIS = 7; }
-        else if (pokemon.getLevel() <= 100) { BADGEREQUIS = 8; }
+        if (pokemon.Level <= 25) { BADGEREQUIS = 0; }
+        else if (pokemon.Level <= 30) { BADGEREQUIS = 1; }
+        else if (pokemon.Level <= 35) { BADGEREQUIS = 2; }
+        else if (pokemon.Level <= 40) { BADGEREQUIS = 3; }
+        else if (pokemon.Level <= 45) { BADGEREQUIS = 4; }
+        else if (pokemon.Level <= 50) { BADGEREQUIS = 5; }
+        else if (pokemon.Level <= 55) { BADGEREQUIS = 6; }
+        else if (pokemon.Level <= 60) { BADGEREQUIS = 7; }
+        else if (pokemon.Level <= 100) { BADGEREQUIS = 8; }
         float BADGEPENALITE = Mathf.Pow(0.8f, Mathf.Max(BADGEREQUIS - NBBADGE, 0f));
         Debug.Log($"Le dresseur possede {NBBADGE} sur les {BADGEREQUIS} Badges nécéssaire.");
         float a = (((((((3f * PVMAX) - (2f * PV)) * TB) * TAUX) * BADGEPENALITE) / (3f * PVMAX) * FAIBLENIVEAU) * STATUT);
@@ -178,43 +177,15 @@ public class Dresseur : MonoBehaviour
         {
             opponant.UIPokeBattle.ChangeUIPokemon(opponant.getCurrentTeam()[0], this.getCurrentTeam()[0]);
             this.UIPokeBattle.ChangeUIPokemon(this.getCurrentTeam()[0], opponant.getCurrentTeam()[0]);
-            if (!this.getCurrentTeam()[0].isFighting)
-            {
-                yield return this.getCurrentTeam()[0].fight(opponant.getCurrentTeam()[0], UIPokeBattle, opponant.UIPokeBattle);
-            }
-            int winner = 0;
+            yield return this.getCurrentTeam()[0].fight(opponant.getCurrentTeam()[0], UIPokeBattle, opponant.UIPokeBattle);
             yield return new WaitForSeconds(0.5f);
-            if (opponant.getCurrentTeam()[0].getCurrentHp() <= 0)
-            {
-                opponant.UIPokeBattle.ChangeCombatText(this.getCurrentTeam()[0].getName() + " est vainqueur!");
-                this.UIPokeBattle.ChangeCombatText(this.getCurrentTeam()[0].getName() + " est vainqueur!");
-                winner = 1;
-            }
-            else if (this.getCurrentTeam()[0].getCurrentHp() <= 0)
-            {
-                opponant.UIPokeBattle.ChangeCombatText(opponant.getCurrentTeam()[0].getName() + " est vainqueur!");
-                this.UIPokeBattle.ChangeCombatText(opponant.getCurrentTeam()[0].getName() + " est vainqueur!");
-                winner = 2;
-            }
-            yield return new WaitForSeconds(UIPokeBattle.TextTime);
-            if (winner == 1)
+            if (opponant.getCurrentTeam()[0].CurrentHp <= 0)
             {
                 opponant.getCurrentTeam().RemoveAt(0);
             }
-            else if (winner == 2)
+            else if (this.getCurrentTeam()[0].CurrentHp <= 0)
             {
                 this.getCurrentTeam().RemoveAt(0);
-            }
-            else if (winner == 0)
-            {
-                if(Random.Range(0,1) == 0)
-                {
-                    this.getCurrentTeam().RemoveAt(0);
-                }
-                else
-                {
-                    opponant.getCurrentTeam().RemoveAt(0);
-                }
             }
         }
         yield return new WaitForSeconds(UIPokeBattle.TextTime);
@@ -267,7 +238,7 @@ public class Dresseur : MonoBehaviour
 
 #if UNITY_EDITOR
 [CustomEditor(typeof(Dresseur)), CanEditMultipleObjects]
-public class P_sefEditor : Editor
+public class Dresseur_selfEditor : Editor
 {
     List<string> Names = new List<string>()
     {
@@ -292,6 +263,7 @@ public class P_sefEditor : Editor
         TeamMaxLenght = EditorGUILayout.IntSlider("TeamRange", TeamMaxLenght, 1, 10);
 
         PokemonSpecieDataBase SpeciesDataBase = Resources.Load<PokemonSpecieDataBase>("DataBase/PokemonSpecieDataBase");
+        NatureDataBase NatureDataBase = Resources.Load<NatureDataBase>("DataBase/NatureDataBase");
 
         EditorGUILayout.LabelField("Level minimum : " + Mathf.FloorToInt(minValLevel).ToString());
         EditorGUILayout.LabelField("Level maximum : " + Mathf.FloorToInt(maxValLevel).ToString());
@@ -313,6 +285,7 @@ public class P_sefEditor : Editor
                     pokemon.specie = SpeciesDataBase.GetRandomPokemonSpecieData();
                     pokemon.namePokemon = pokemon.specie.NameSpecie;
                     pokemon.Level = Random.Range(Mathf.FloorToInt(minValLevel), Mathf.FloorToInt(maxValLevel));
+                    pokemon.Nature = NatureDataBase.GetRandomPokemonNatureData();
                     if (Dresseur.calcul9G(new Pokemon(pokemon)))
                     {
                         team.Add(pokemon);

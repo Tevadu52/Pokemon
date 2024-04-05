@@ -1,6 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct Stats
+{
+    public int Hp;
+    public int Attack;
+    public int Defense;
+    public int AttackSpe;
+    public int DefenseSpe;
+    public int Speed;
+}
 
 [System.Serializable]
 public class PokemonSpecieData
@@ -11,25 +21,18 @@ public class PokemonSpecieData
     [SerializeField]
     private int id;
     [SerializeField]
-    private List<Element> elements;
+    private List<ElementData> elements;
     [SerializeField]
-    private Sprite sprite;
+    private Sprite frontSprite;
+    [SerializeField]
+    private Sprite backSprite;
 
-    [System.Serializable]
-    public struct Stats
-    {
-        public int baseHp;
-        public int baseAttack;
-        public int baseDefense;
-        public int baseAttackSpe;
-        public int baseDefenseSpe;
-        public int baseSpeed;
-        public int baseXP;
-    }
 
     [Header("Stats")]
     [SerializeField]
-    private Stats stat;
+    private Stats baseStats;
+    [SerializeField]
+    private int baseXP;
     [SerializeField]
     private int captureTaux;
 
@@ -45,12 +48,21 @@ public class PokemonSpecieData
     [SerializeField]
     private Infos info;
 
-    public string NameSpecie { get { return nameSpecie; } }
-    public int Id { get { return id; } }
-    public Stats Stat { get { return stat; } }
-    public List<Element> Elements { get { return elements; } }
-    public Sprite Sprite { get { return sprite; } }
-    public Infos Info { get { return info; } }
-    public int CaptureTaux { get { return captureTaux; } }
+    [Header("Competence")]
+    [SerializeField]
+    private List<CompetenceLearn> competenceLearnable;
+
+    public string NameSpecie { get { return nameSpecie; } set { nameSpecie = value; } }
+    public int Id { get { return id; } set { id = value; } }
+    public Stats Stats { get { return baseStats; } set { baseStats = value; } }
+    public List<ElementData> Elements { get { return elements; } set { elements = value; } }
+    public Sprite FrontSprite { get { return frontSprite; } set { frontSprite = value; } }
+    public Sprite BackSprite { get { return backSprite; } set { backSprite = value; } }
+    public string Poids { get { return info.poids; } set { info.poids = value; } }
+    public string Taille { get { return info.taille; } set { info.taille = value; } }
+    public string Description { get { return info.description; } set { info.description = value; } }
+    public int CaptureTaux { get { return captureTaux; } set { captureTaux = value; } }
+    public int BaseXP { get { return baseXP; } set { baseXP = value; } }
+    public List<CompetenceLearn> CompetenceLearnable { get { return competenceLearnable; } set { competenceLearnable = value; } }
 }
 
