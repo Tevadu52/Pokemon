@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using Newtonsoft.Json.Linq;
 using System.Linq;
+using UnityEditor.VersionControl;
 
 [CreateAssetMenu(fileName = "PokemonSpecieDataBase", menuName = "My Game/PokemonSpecieDataBase")]
 public class PokemonSpecieDataBase : BaseData
@@ -73,6 +74,7 @@ public class PokemonSpecieDataBase_selfEditor : Editor
                 }
             }
         }
+        EditorUtility.SetDirty((PokemonSpecieDataBase)target);
         isRunning = false;
     }
 

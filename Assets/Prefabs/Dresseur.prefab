@@ -1823,9 +1823,9 @@ MonoBehaviour:
     team: []
     currentTeam: []
   distance: 5
-  UIPokeBattle: {fileID: 1695455542414913252}
-  UIDresseur: {fileID: 3002713985526669044}
-  UIPokeMenu: {fileID: 8867848255531567372}
+  uiPokeBattle: {fileID: 1695455542414913252}
+  uiDresseur: {fileID: 3002713985526669044}
+  uiPokeMenu: {fileID: 8867848255531567372}
   cam: {fileID: 8892830322808156873}
 --- !u!195 &9153683832245484255
 NavMeshAgent:

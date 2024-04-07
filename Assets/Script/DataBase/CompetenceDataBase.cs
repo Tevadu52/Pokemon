@@ -57,6 +57,7 @@ public class CompetenceDataBase_selfEditor : Editor
                 }
             }
         }
+        EditorUtility.SetDirty((CompetenceDataBase)target);
     }
 
     public void PasteData(JObject rss, List<CompetenceData> dataBase)

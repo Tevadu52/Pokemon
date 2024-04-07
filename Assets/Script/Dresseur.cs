@@ -13,15 +13,20 @@ public class Dresseur : MonoBehaviour
     [SerializeField]
     private float distance = 5;
     [SerializeField]
-    private UIPokeBattle UIPokeBattle;
+    private UIDresseur uiDresseur;
     [SerializeField]
-    private UIDresseur UIDresseur;
+    private UIPokeMenu uiPokeMenu;
     [SerializeField]
-    private UIPokeMenu UIPokeMenu;
+    private UIPokeBattle uiPokeBattle;
     [SerializeField]
     private GameObject cam;
 
     private bool isFighting = false;
+
+    public bool IsFighting {  get { return isFighting; } set { isFighting = value; } }
+    public UIPokeBattle UIPokeBattle { get { return uiPokeBattle; } }
+    public UIDresseur UIDresseur { get { return uiDresseur; } }
+    public UIPokeMenu UIPokeMenu { get { return uiPokeMenu; } }
 
     public Dresseur(string nameDresseur, List<Pokemon> team,int money,int badge)
     {
@@ -47,7 +52,7 @@ public class Dresseur : MonoBehaviour
             Dresseur Opponant = raycastHit.collider.transform.parent.gameObject.GetComponent<Dresseur>();
             if (raycastHit.collider.gameObject != this.gameObject && !isFighting && !Opponant.getIsFighting())
             {
-                StartCoroutine(match(Opponant));
+                StartCoroutine(FightManager.Instance.match(this, Opponant));
             }
         }
     }
@@ -109,111 +114,6 @@ public class Dresseur : MonoBehaviour
     {
         team.Add(pokemon);
         DresseurData.team.Add(pokemon.PokemonData);
-    }
-
-    public bool calcul9G(Pokemon pokemon)
-    {
-        int PVMAX = pokemon.Hp;
-        int PV = pokemon.CurrentHp;
-        int TAUX = pokemon.Specie.CaptureTaux;
-        float STATUT = 1f;
-        //STATUT = pokemon.getStatut(); Le satut du pokemon
-        float TB = 1f;
-        //BALL = 1; Le type de pokeball utiliser
-        // TB = TB * BALL
-        int NIVEAU = pokemon.Level;
-        float FAIBLENIVEAU = 1f;
-        if (NIVEAU < 13)
-        {
-            FAIBLENIVEAU = 3.6f - 2 * NIVEAU / 10f;
-        }
-        int NBBADGE = this.Badge;
-        float BADGEREQUIS = 0; ;
-        if (pokemon.Level <= 25) { BADGEREQUIS = 0; }
-        else if (pokemon.Level <= 30) { BADGEREQUIS = 1; }
-        else if (pokemon.Level <= 35) { BADGEREQUIS = 2; }
-        else if (pokemon.Level <= 40) { BADGEREQUIS = 3; }
-        else if (pokemon.Level <= 45) { BADGEREQUIS = 4; }
-        else if (pokemon.Level <= 50) { BADGEREQUIS = 5; }
-        else if (pokemon.Level <= 55) { BADGEREQUIS = 6; }
-        else if (pokemon.Level <= 60) { BADGEREQUIS = 7; }
-        else if (pokemon.Level <= 100) { BADGEREQUIS = 8; }
-        float BADGEPENALITE = Mathf.Pow(0.8f, Mathf.Max(BADGEREQUIS - NBBADGE, 0f));
-        Debug.Log($"Le dresseur possede {NBBADGE} sur les {BADGEREQUIS} Badges nécéssaire.");
-        float a = (((((((3f * PVMAX) - (2f * PV)) * TB) * TAUX) * BADGEPENALITE) / (3f * PVMAX) * FAIBLENIVEAU) * STATUT);
-        float b = Mathf.Floor(65536f / Mathf.Pow((255f / a), (3f / 16f)));
-        float capture;
-        // Calcul des chances de vaciller 4 fois dans le cas "capture non critique" et des chances de vaciller 1 fois dans le cas "capture critique" 
-        if (a < 255)
-        {
-            capture = Mathf.Pow((b / 65536f), 4f);
-        }
-        else
-        {
-            capture = 1;
-        }
-        Debug.Log($"La probabilité de capturer {pokemon.PokemonData.namePokemon} de niveau {NIVEAU} est de {Mathf.Round(capture * 10000f) / 100f} %");
-        return Random.Range(0, 101) <= Mathf.Round(capture * 10000f) / 100f;
-    }
-
-    private IEnumerator match(Dresseur opponant)
-    {
-        opponant.isFighting = true;
-        isFighting = true;
-        opponant.transform.LookAt(this.transform);
-        this.transform.LookAt(opponant.transform);
-        int nb = this.UIPokeBattle.ChooseCombatBackground(); ;
-        opponant.UIPokeBattle.ChangeCombatBackground(nb);
-        this.UIPokeBattle.ChangeCombatBackground(nb);
-        opponant.UIPokeBattle.ChangeUIPokemon(opponant.getCurrentTeam()[0], this.getCurrentTeam()[0]);
-        this.UIPokeBattle.ChangeUIPokemon(this.getCurrentTeam()[0], opponant.getCurrentTeam()[0]);
-        yield return new WaitForSeconds(UIPokeBattle.TextTime);
-        opponant.UIDresseur.setOnlyScreen("Battle");
-        this.UIDresseur.setOnlyScreen("Battle");
-        opponant.UIPokeBattle.ChangeCombatText(opponant.getNameDresseur() + " va avoir un match avec " + this.getNameDresseur());
-        this.UIPokeBattle.ChangeCombatText(this.getNameDresseur() + " va avoir un match avec " + opponant.getNameDresseur());
-        yield return new WaitForSeconds(UIPokeBattle.TextTime);
-        while (this.getCurrentTeam().Count > 0 && opponant.getCurrentTeam().Count > 0)
-        {
-            opponant.UIPokeBattle.ChangeUIPokemon(opponant.getCurrentTeam()[0], this.getCurrentTeam()[0]);
-            this.UIPokeBattle.ChangeUIPokemon(this.getCurrentTeam()[0], opponant.getCurrentTeam()[0]);
-            yield return this.getCurrentTeam()[0].fight(opponant.getCurrentTeam()[0], UIPokeBattle, opponant.UIPokeBattle);
-            yield return new WaitForSeconds(0.5f);
-            if (opponant.getCurrentTeam()[0].CurrentHp <= 0)
-            {
-                opponant.getCurrentTeam().RemoveAt(0);
-            }
-            else if (this.getCurrentTeam()[0].CurrentHp <= 0)
-            {
-                this.getCurrentTeam().RemoveAt(0);
-            }
-        }
-        yield return new WaitForSeconds(UIPokeBattle.TextTime);
-        if (opponant.getCurrentTeam().Count == 0)
-        {
-            this.UIPokeBattle.ChangeCombatText(this.getNameDresseur() + " est vainqueur!");
-            opponant.UIPokeBattle.ChangeCombatText(this.getNameDresseur() + " est vainqueur!");
-            opponant.GameOver();
-        }
-        else if (this.getCurrentTeam().Count == 0)
-        {
-            this.UIPokeBattle.ChangeCombatText(opponant.getNameDresseur() + " est vainqueur!");
-            opponant.UIPokeBattle.ChangeCombatText(opponant.getNameDresseur() + " est vainqueur!");
-            this.GameOver();
-        }
-        else
-        {
-            this.UIPokeBattle.ChangeCombatText("Match nul");
-            opponant.UIPokeBattle.ChangeCombatText("Match nul");
-        }
-        this.setSavedTeam();
-        opponant.setSavedTeam();
-        this.setSavedCurrentTeam();
-        opponant.setSavedCurrentTeam();
-        opponant.UIDresseur.setOnlyScreen("Menu");
-        this.UIDresseur.setOnlyScreen("Menu");
-        this.isFighting = false;
-        opponant.isFighting = false;
     }
 
     public void GameOver()
@@ -286,7 +186,7 @@ public class Dresseur_selfEditor : Editor
                     pokemon.namePokemon = pokemon.specie.NameSpecie;
                     pokemon.Level = Random.Range(Mathf.FloorToInt(minValLevel), Mathf.FloorToInt(maxValLevel));
                     pokemon.Nature = NatureDataBase.GetRandomPokemonNatureData();
-                    if (Dresseur.calcul9G(new Pokemon(pokemon)))
+                    if (FightManager.Instance.calcul9G(Dresseur, new Pokemon(pokemon)))
                     {
                         team.Add(pokemon);
                     }
