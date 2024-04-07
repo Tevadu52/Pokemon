@@ -186,9 +186,11 @@ public class Dresseur_selfEditor : Editor
                     pokemon.namePokemon = pokemon.specie.NameSpecie;
                     pokemon.Level = Random.Range(Mathf.FloorToInt(minValLevel), Mathf.FloorToInt(maxValLevel));
                     pokemon.Nature = NatureDataBase.GetRandomPokemonNatureData();
-                    if (FightManager.Instance.calcul9G(Dresseur, new Pokemon(pokemon)))
+                    Pokemon pokemonFinal = new Pokemon(pokemon);
+                    if (GameObject.FindAnyObjectByType<FightManager>().calcul9G(Dresseur, pokemonFinal))
                     {
                         team.Add(pokemon);
+                        Debug.Log("Capture réussie !");
                     }
                 }
                 Dresseur.setupDresseurEditor(name, team, money, badge);

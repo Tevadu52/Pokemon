@@ -136,7 +136,7 @@ public class PokemonSpecieDataBase_selfEditor : Editor
         while (i < rss["moves"].Count<object>())
         {
             CompetenceLearn competenceLearn = new CompetenceLearn();
-            competenceLearn.CompetenceData = Resources.Load<CompetenceDataBase>("DataBase/CompetenceDataBase").GetCompetenceData((string)rss["moves"][i]["move"]["name"]);
+            competenceLearn.IdCompetence = Resources.Load<CompetenceDataBase>("DataBase/CompetenceDataBase").GetCompetenceData((string)rss["moves"][i]["move"]["name"]).Id;
             competenceLearn.LevelRestriction = (int)rss["moves"][i]["version_group_details"][(rss["moves"][i]["version_group_details"].Count<object>() - 1)]["level_learned_at"];
             string learnby = (string)rss["moves"][i]["version_group_details"][rss["moves"][i]["version_group_details"].Count<object>() - 1]["move_learn_method"]["name"];
             if(learnby == "egg")

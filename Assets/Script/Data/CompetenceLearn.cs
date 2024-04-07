@@ -7,7 +7,7 @@ using static CompetenceData;
 public class CompetenceLearn
 {
     [SerializeField]
-    private CompetenceData competenceData;
+    private int id;
     public enum LearnMethod
     {
         Egg,
@@ -18,7 +18,7 @@ public class CompetenceLearn
     private LearnMethod learnMethod;
     [SerializeField]
     private int levelRestriction;
-    public CompetenceData CompetenceData { get { return competenceData; } set { competenceData = value; } }
+    public int IdCompetence { get { return id; } set { id = value; } }
     public LearnMethod LearnBy { get { return learnMethod; } set { learnMethod = value; } }
     public int LevelRestriction { get { return levelRestriction; } set { levelRestriction = value; } }
 }
